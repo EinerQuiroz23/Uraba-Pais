@@ -1,0 +1,3170 @@
+[
+  {
+    "internalCode": "BEN-001",
+    "fullName": "Mariana Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200001",
+    "sex": "MUJER",
+    "age": 34,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-01-12",
+    "family": {
+      "fullName": "Familiar de Mariana",
+      "relationship": "Hija",
+      "age": 26
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-01-16",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-002",
+    "fullName": "Mateo Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200002",
+    "sex": "HOMBRE",
+    "age": 30,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "FADV",
+    "registeredOn": "2026-01-14",
+    "family": {
+      "fullName": "Familiar de Mateo",
+      "relationship": "Hijo",
+      "age": 22
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-01-19",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-01-19",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-003",
+    "fullName": "Sara Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200003",
+    "sex": "MUJER",
+    "age": 40,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-01-16",
+    "family": {
+      "fullName": "Familiar de Sara",
+      "relationship": "Hermana",
+      "age": 32
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-01-22",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-004",
+    "fullName": "Daniel Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200004",
+    "sex": "HOMBRE",
+    "age": 61,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-01-18",
+    "family": {
+      "fullName": "Familiar de Daniel",
+      "relationship": "Compañero/a",
+      "age": 53
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-01-25",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-01-25",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-005",
+    "fullName": "Laura Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200005",
+    "sex": "MUJER",
+    "age": 49,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-01-20",
+    "family": {
+      "fullName": "Familiar de Laura",
+      "relationship": "Madre",
+      "age": 41
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-01-28",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-006",
+    "fullName": "David Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200006",
+    "sex": "HOMBRE",
+    "age": 47,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "FADV",
+    "registeredOn": "2026-01-22",
+    "family": {
+      "fullName": "Familiar de David",
+      "relationship": "Padre",
+      "age": 39
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-01-31",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-01-31",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-007",
+    "fullName": "Natalia Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200007",
+    "sex": "MUJER",
+    "age": 36,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-01-24",
+    "family": {
+      "fullName": "Familiar de Natalia",
+      "relationship": "Hija",
+      "age": 28
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-03",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-008",
+    "fullName": "Juan Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200008",
+    "sex": "HOMBRE",
+    "age": 22,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-01-26",
+    "family": {
+      "fullName": "Familiar de Juan",
+      "relationship": "Hijo",
+      "age": 14
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-06",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-02-06",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-009",
+    "fullName": "Andrea Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200009",
+    "sex": "MUJER",
+    "age": 58,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-01-28",
+    "family": {
+      "fullName": "Familiar de Andrea",
+      "relationship": "Hermana",
+      "age": 50
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-09",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-010",
+    "fullName": "Esteban Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200010",
+    "sex": "HOMBRE",
+    "age": 40,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "FADV",
+    "registeredOn": "2026-01-30",
+    "family": {
+      "fullName": "Familiar de Esteban",
+      "relationship": "Compañero/a",
+      "age": 32
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-12",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-02-12",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-011",
+    "fullName": "Paula Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "",
+    "sex": "MUJER",
+    "age": 37,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-02-01",
+    "family": {
+      "fullName": "Familiar de Paula",
+      "relationship": "Madre",
+      "age": 29
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-02-15",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-012",
+    "fullName": "Carlos Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200012",
+    "sex": "HOMBRE",
+    "age": 34,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "MIGRANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-02-03",
+    "family": {
+      "fullName": "Familiar de Carlos",
+      "relationship": "Padre",
+      "age": 26
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-02-18",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-02-18",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-013",
+    "fullName": "Manuela Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200013",
+    "sex": "MUJER",
+    "age": 49,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-02-05",
+    "family": {
+      "fullName": "Familiar de Manuela",
+      "relationship": "Hija",
+      "age": 41
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-02-21",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-014",
+    "fullName": "Sebastián Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200014",
+    "sex": "HOMBRE",
+    "age": 37,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "FADV",
+    "registeredOn": "2026-02-07",
+    "family": {
+      "fullName": "Familiar de Sebastián",
+      "relationship": "Hijo",
+      "age": 29
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-02-24",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-02-24",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-015",
+    "fullName": "Alejandra Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200015",
+    "sex": "MUJER",
+    "age": 57,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-02-09",
+    "family": {
+      "fullName": "Familiar de Alejandra",
+      "relationship": "Hermana",
+      "age": 49
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-27",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-016",
+    "fullName": "Samuel Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200016",
+    "sex": "HOMBRE",
+    "age": 61,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-02-11",
+    "family": {
+      "fullName": "Familiar de Samuel",
+      "relationship": "Compañero/a",
+      "age": 53
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-02",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-03-02",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-017",
+    "fullName": "Valentina Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200017",
+    "sex": "MUJER",
+    "age": 34,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "COOPI",
+    "registeredOn": "2026-02-13",
+    "family": {
+      "fullName": "Familiar de Valentina",
+      "relationship": "Madre",
+      "age": 26
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-03-05",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-018",
+    "fullName": "Santiago Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200018",
+    "sex": "HOMBRE",
+    "age": 47,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "MIGRANTE",
+    "organization": "FADV",
+    "registeredOn": "2026-02-15",
+    "family": {
+      "fullName": "Familiar de Santiago",
+      "relationship": "Padre",
+      "age": 39
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-03-08",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-03-08",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-019",
+    "fullName": "Daniela Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200019",
+    "sex": "MUJER",
+    "age": 20,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-02-17",
+    "family": {
+      "fullName": "Familiar de Daniela",
+      "relationship": "Hija",
+      "age": 12
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-03-11",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-020",
+    "fullName": "Andrés Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200020",
+    "sex": "HOMBRE",
+    "age": 39,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-02-19",
+    "family": {
+      "fullName": "Familiar de Andrés",
+      "relationship": "Hijo",
+      "age": 31
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-03-14",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-03-14",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-021",
+    "fullName": "Camila Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200021",
+    "sex": "MUJER",
+    "age": 57,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "MIGRANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-02-21",
+    "family": {
+      "fullName": "Familiar de Camila",
+      "relationship": "Hermana",
+      "age": 49
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-17",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-022",
+    "fullName": "Nicolás Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200022",
+    "sex": "HOMBRE",
+    "age": 20,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "FADV",
+    "registeredOn": "2026-02-23",
+    "family": {
+      "fullName": "Familiar de Nicolás",
+      "relationship": "Compañero/a",
+      "age": 12
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-20",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-03-20",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-023",
+    "fullName": "Juliana Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200023",
+    "sex": "MUJER",
+    "age": 23,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-02-25",
+    "family": {
+      "fullName": "Familiar de Juliana",
+      "relationship": "Madre",
+      "age": 15
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-23",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-024",
+    "fullName": "Felipe Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200024",
+    "sex": "HOMBRE",
+    "age": 22,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "MIGRANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-02-27",
+    "family": {
+      "fullName": "Familiar de Felipe",
+      "relationship": "Padre",
+      "age": 14
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-26",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-03-26",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-025",
+    "fullName": "Sofía Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200025",
+    "sex": "MUJER",
+    "age": 35,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "COOPI",
+    "registeredOn": "2026-03-01",
+    "family": {
+      "fullName": "Familiar de Sofía",
+      "relationship": "Hija",
+      "age": 27
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-03-04",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-026",
+    "fullName": "Miguel Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200026",
+    "sex": "HOMBRE",
+    "age": 23,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "FADV",
+    "registeredOn": "2026-03-03",
+    "family": {
+      "fullName": "Familiar de Miguel",
+      "relationship": "Hijo",
+      "age": 15
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-07",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-03-07",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-028",
+    "fullName": "Julián Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200028",
+    "sex": "HOMBRE",
+    "age": 27,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-03-07",
+    "family": {
+      "fullName": "Familiar de Julián",
+      "relationship": "Compañero/a",
+      "age": 19
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-03-13",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-03-13",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-029",
+    "fullName": "Carolina Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200029",
+    "sex": "MUJER",
+    "age": 34,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "COOPI",
+    "registeredOn": "2026-03-09",
+    "family": {
+      "fullName": "Familiar de Carolina",
+      "relationship": "Madre",
+      "age": 26
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-03-16",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-030",
+    "fullName": "Alejandro Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200030",
+    "sex": "HOMBRE",
+    "age": 27,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "FADV",
+    "registeredOn": "2026-03-11",
+    "family": {
+      "fullName": "Familiar de Alejandro",
+      "relationship": "Padre",
+      "age": 19
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-03-19",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-03-19",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-031",
+    "fullName": "Mariana Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200031",
+    "sex": "MUJER",
+    "age": 58,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-03-13",
+    "family": {
+      "fullName": "Familiar de Mariana",
+      "relationship": "Hija",
+      "age": 50
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-22",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-032",
+    "fullName": "Mateo Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200032",
+    "sex": "HOMBRE",
+    "age": 48,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-03-15",
+    "family": {
+      "fullName": "Familiar de Mateo",
+      "relationship": "Hijo",
+      "age": 40
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-25",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-03-25",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-033",
+    "fullName": "Sara Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200033",
+    "sex": "MUJER",
+    "age": 21,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-03-17",
+    "family": {
+      "fullName": "Familiar de Sara",
+      "relationship": "Hermana",
+      "age": 13
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-28",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-034",
+    "fullName": "Daniel Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200034",
+    "sex": "HOMBRE",
+    "age": 39,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "FADV",
+    "registeredOn": "2026-03-19",
+    "family": {
+      "fullName": "Familiar de Daniel",
+      "relationship": "Compañero/a",
+      "age": 31
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-03-31",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-03-31",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-035",
+    "fullName": "Laura Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200035",
+    "sex": "MUJER",
+    "age": 37,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-03-21",
+    "family": {
+      "fullName": "Familiar de Laura",
+      "relationship": "Madre",
+      "age": 29
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-04-03",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-036",
+    "fullName": "David Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200036",
+    "sex": "HOMBRE",
+    "age": 24,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-03-23",
+    "family": {
+      "fullName": "Familiar de David",
+      "relationship": "Padre",
+      "age": 16
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-04-06",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-04-06",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-037",
+    "fullName": "Natalia Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200037",
+    "sex": "MUJER",
+    "age": 30,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-03-25",
+    "family": {
+      "fullName": "Familiar de Natalia",
+      "relationship": "Hija",
+      "age": 22
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-04-09",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-038",
+    "fullName": "Juan Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200038",
+    "sex": "HOMBRE",
+    "age": 26,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "FADV",
+    "registeredOn": "2026-03-27",
+    "family": {
+      "fullName": "Familiar de Juan",
+      "relationship": "Hijo",
+      "age": 18
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-04-12",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-04-12",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-039",
+    "fullName": "Andrea Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200039",
+    "sex": "MUJER",
+    "age": 53,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-03-29",
+    "family": {
+      "fullName": "Familiar de Andrea",
+      "relationship": "Hermana",
+      "age": 45
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-04-15",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-040",
+    "fullName": "Esteban Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200040",
+    "sex": "HOMBRE",
+    "age": 24,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-03-31",
+    "family": {
+      "fullName": "Familiar de Esteban",
+      "relationship": "Compañero/a",
+      "age": 16
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-04-18",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-04-18",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-041",
+    "fullName": "Paula Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200041",
+    "sex": "MUJER",
+    "age": 59,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-04-02",
+    "family": {
+      "fullName": "Familiar de Paula",
+      "relationship": "Madre",
+      "age": 51
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-04-21",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-042",
+    "fullName": "Carlos Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200042",
+    "sex": "HOMBRE",
+    "age": 61,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "FADV",
+    "registeredOn": "2026-04-04",
+    "family": {
+      "fullName": "Familiar de Carlos",
+      "relationship": "Padre",
+      "age": 53
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-04-24",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-04-24",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-043",
+    "fullName": "Manuela Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200043",
+    "sex": "MUJER",
+    "age": 21,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-04-06",
+    "family": {
+      "fullName": "Familiar de Manuela",
+      "relationship": "Hija",
+      "age": 13
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-04-27",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-045",
+    "fullName": "Alejandra Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200045",
+    "sex": "MUJER",
+    "age": 20,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "MIGRANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-04-10",
+    "family": {
+      "fullName": "Familiar de Alejandra",
+      "relationship": "Hermana",
+      "age": 12
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-03",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-046",
+    "fullName": "Samuel Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200046",
+    "sex": "HOMBRE",
+    "age": 46,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "FADV",
+    "registeredOn": "2026-04-12",
+    "family": {
+      "fullName": "Familiar de Samuel",
+      "relationship": "Compañero/a",
+      "age": 38
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-05-06",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-05-06",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-047",
+    "fullName": "Valentina Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200047",
+    "sex": "MUJER",
+    "age": 52,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-04-14",
+    "family": {
+      "fullName": "Familiar de Valentina",
+      "relationship": "Madre",
+      "age": 44
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-09",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-048",
+    "fullName": "Santiago Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200048",
+    "sex": "HOMBRE",
+    "age": 25,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-04-16",
+    "family": {
+      "fullName": "Familiar de Santiago",
+      "relationship": "Padre",
+      "age": 17
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-12",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-05-12",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-049",
+    "fullName": "Daniela Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200049",
+    "sex": "MUJER",
+    "age": 52,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-04-18",
+    "family": {
+      "fullName": "Familiar de Daniela",
+      "relationship": "Hija",
+      "age": 44
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-15",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-050",
+    "fullName": "Andrés Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200050",
+    "sex": "HOMBRE",
+    "age": 29,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "FADV",
+    "registeredOn": "2026-04-20",
+    "family": {
+      "fullName": "Familiar de Andrés",
+      "relationship": "Hijo",
+      "age": 21
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-04-23",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-04-23",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-051",
+    "fullName": "Camila Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200051",
+    "sex": "MUJER",
+    "age": 31,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-04-22",
+    "family": {
+      "fullName": "Familiar de Camila",
+      "relationship": "Hermana",
+      "age": 23
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-04-26",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-052",
+    "fullName": "Nicolás Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200052",
+    "sex": "HOMBRE",
+    "age": 29,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-04-24",
+    "family": {
+      "fullName": "Familiar de Nicolás",
+      "relationship": "Compañero/a",
+      "age": 21
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-04-29",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-04-29",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-053",
+    "fullName": "Juliana Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200053",
+    "sex": "MUJER",
+    "age": 30,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-04-26",
+    "family": {
+      "fullName": "Familiar de Juliana",
+      "relationship": "Madre",
+      "age": 22
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-05-02",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-054",
+    "fullName": "Felipe Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200054",
+    "sex": "HOMBRE",
+    "age": 20,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "FADV",
+    "registeredOn": "2026-04-28",
+    "family": {
+      "fullName": "Familiar de Felipe",
+      "relationship": "Padre",
+      "age": 12
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-05-05",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-05-05",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-055",
+    "fullName": "Sofía Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200055",
+    "sex": "MUJER",
+    "age": 54,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-04-30",
+    "family": {
+      "fullName": "Familiar de Sofía",
+      "relationship": "Hija",
+      "age": 46
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-08",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-056",
+    "fullName": "Miguel Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200056",
+    "sex": "HOMBRE",
+    "age": 25,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-05-02",
+    "family": {
+      "fullName": "Familiar de Miguel",
+      "relationship": "Hijo",
+      "age": 17
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-05-11",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-05-11",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-057",
+    "fullName": "Gabriela Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200057",
+    "sex": "MUJER",
+    "age": 33,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-05-04",
+    "family": {
+      "fullName": "Familiar de Gabriela",
+      "relationship": "Hermana",
+      "age": 25
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-14",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-058",
+    "fullName": "Julián Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200058",
+    "sex": "HOMBRE",
+    "age": 21,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "FADV",
+    "registeredOn": "2026-05-06",
+    "family": {
+      "fullName": "Familiar de Julián",
+      "relationship": "Compañero/a",
+      "age": 13
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-17",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-05-17",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-059",
+    "fullName": "Carolina Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200059",
+    "sex": "MUJER",
+    "age": 32,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-05-08",
+    "family": {
+      "fullName": "Familiar de Carolina",
+      "relationship": "Madre",
+      "age": 24
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-20",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-060",
+    "fullName": "Alejandro Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200060",
+    "sex": "HOMBRE",
+    "age": 19,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-05-10",
+    "family": {
+      "fullName": "Familiar de Alejandro",
+      "relationship": "Padre",
+      "age": 11
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-05-23",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-05-23",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-061",
+    "fullName": "Mariana Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200061",
+    "sex": "MUJER",
+    "age": 26,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-05-12",
+    "family": {
+      "fullName": "Familiar de Mariana",
+      "relationship": "Hija",
+      "age": 18
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-05-26",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-062",
+    "fullName": "Mateo Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200062",
+    "sex": "HOMBRE",
+    "age": 58,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "FADV",
+    "registeredOn": "2026-05-14",
+    "family": {
+      "fullName": "Familiar de Mateo",
+      "relationship": "Hijo",
+      "age": 50
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-05-29",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-05-29",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-064",
+    "fullName": "Daniel Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200064",
+    "sex": "HOMBRE",
+    "age": 46,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-05-18",
+    "family": {
+      "fullName": "Familiar de Daniel",
+      "relationship": "Compañero/a",
+      "age": 38
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-06-04",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-06-04",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-065",
+    "fullName": "Laura Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200065",
+    "sex": "MUJER",
+    "age": 47,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-05-20",
+    "family": {
+      "fullName": "Familiar de Laura",
+      "relationship": "Madre",
+      "age": 39
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-07",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-066",
+    "fullName": "David Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200066",
+    "sex": "HOMBRE",
+    "age": 50,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "FADV",
+    "registeredOn": "2026-05-22",
+    "family": {
+      "fullName": "Familiar de David",
+      "relationship": "Padre",
+      "age": 42
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-06-10",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-06-10",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-067",
+    "fullName": "Natalia Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200067",
+    "sex": "MUJER",
+    "age": 45,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-05-24",
+    "family": {
+      "fullName": "Familiar de Natalia",
+      "relationship": "Hija",
+      "age": 37
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-13",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-068",
+    "fullName": "Juan Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200068",
+    "sex": "HOMBRE",
+    "age": 45,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-05-26",
+    "family": {
+      "fullName": "Familiar de Juan",
+      "relationship": "Hijo",
+      "age": 37
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-16",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-06-16",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-069",
+    "fullName": "Andrea Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200069",
+    "sex": "MUJER",
+    "age": 42,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-05-28",
+    "family": {
+      "fullName": "Familiar de Andrea",
+      "relationship": "Hermana",
+      "age": 34
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-19",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-070",
+    "fullName": "Esteban Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200070",
+    "sex": "HOMBRE",
+    "age": 18,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "FADV",
+    "registeredOn": "2026-05-30",
+    "family": {
+      "fullName": "Familiar de Esteban",
+      "relationship": "Compañero/a",
+      "age": 10
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-22",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-06-22",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-071",
+    "fullName": "Paula Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200071",
+    "sex": "MUJER",
+    "age": 42,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-06-01",
+    "family": {
+      "fullName": "Familiar de Paula",
+      "relationship": "Madre",
+      "age": 34
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-06-25",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-072",
+    "fullName": "Carlos Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200072",
+    "sex": "HOMBRE",
+    "age": 53,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-06-03",
+    "family": {
+      "fullName": "Familiar de Carlos",
+      "relationship": "Padre",
+      "age": 45
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-06-28",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-06-28",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-073",
+    "fullName": "Manuela Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200073",
+    "sex": "MUJER",
+    "age": 55,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-06-05",
+    "family": {
+      "fullName": "Familiar de Manuela",
+      "relationship": "Hija",
+      "age": 47
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-07-01",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-074",
+    "fullName": "Sebastián Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200074",
+    "sex": "HOMBRE",
+    "age": 52,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "FADV",
+    "registeredOn": "2026-06-07",
+    "family": {
+      "fullName": "Familiar de Sebastián",
+      "relationship": "Hijo",
+      "age": 44
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-07-04",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-07-04",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-075",
+    "fullName": "Alejandra Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200075",
+    "sex": "MUJER",
+    "age": 57,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-06-09",
+    "family": {
+      "fullName": "Familiar de Alejandra",
+      "relationship": "Hermana",
+      "age": 49
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-12",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-076",
+    "fullName": "Samuel Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200076",
+    "sex": "HOMBRE",
+    "age": 28,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-06-11",
+    "family": {
+      "fullName": "Familiar de Samuel",
+      "relationship": "Compañero/a",
+      "age": 20
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-06-15",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-06-15",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-077",
+    "fullName": "Valentina Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200077",
+    "sex": "MUJER",
+    "age": 59,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "COOPI",
+    "registeredOn": "2026-06-13",
+    "family": {
+      "fullName": "Familiar de Valentina",
+      "relationship": "Madre",
+      "age": 51
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-18",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-078",
+    "fullName": "Santiago Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200078",
+    "sex": "HOMBRE",
+    "age": 26,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "FADV",
+    "registeredOn": "2026-06-15",
+    "family": {
+      "fullName": "Familiar de Santiago",
+      "relationship": "Padre",
+      "age": 18
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-21",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-06-21",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-079",
+    "fullName": "Daniela Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200079",
+    "sex": "MUJER",
+    "age": 58,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-06-17",
+    "family": {
+      "fullName": "Familiar de Daniela",
+      "relationship": "Hija",
+      "age": 50
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-24",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-080",
+    "fullName": "Andrés Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200080",
+    "sex": "HOMBRE",
+    "age": 30,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-06-19",
+    "family": {
+      "fullName": "Familiar de Andrés",
+      "relationship": "Hijo",
+      "age": 22
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-06-27",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-06-27",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-081",
+    "fullName": "Camila Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200081",
+    "sex": "MUJER",
+    "age": 27,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "COOPI",
+    "registeredOn": "2026-06-21",
+    "family": {
+      "fullName": "Familiar de Camila",
+      "relationship": "Hermana",
+      "age": 19
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-06-30",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-083",
+    "fullName": "Juliana Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200083",
+    "sex": "MUJER",
+    "age": 25,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-06-25",
+    "family": {
+      "fullName": "Familiar de Juliana",
+      "relationship": "Madre",
+      "age": 17
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-07-06",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-084",
+    "fullName": "Felipe Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200084",
+    "sex": "HOMBRE",
+    "age": 27,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-06-27",
+    "family": {
+      "fullName": "Familiar de Felipe",
+      "relationship": "Padre",
+      "age": 19
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-07-09",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-07-09",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-085",
+    "fullName": "Sofía Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200085",
+    "sex": "MUJER",
+    "age": 58,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "COOPI",
+    "registeredOn": "2026-06-29",
+    "family": {
+      "fullName": "Familiar de Sofía",
+      "relationship": "Hija",
+      "age": 50
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-07-12",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-086",
+    "fullName": "Miguel Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200086",
+    "sex": "HOMBRE",
+    "age": 26,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "FADV",
+    "registeredOn": "2026-07-01",
+    "family": {
+      "fullName": "Familiar de Miguel",
+      "relationship": "Hijo",
+      "age": 18
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-07-15",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-07-15",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-087",
+    "fullName": "Gabriela Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200087",
+    "sex": "MUJER",
+    "age": 41,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-07-03",
+    "family": {
+      "fullName": "Familiar de Gabriela",
+      "relationship": "Hermana",
+      "age": 33
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-07-18",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-088",
+    "fullName": "Julián Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200088",
+    "sex": "HOMBRE",
+    "age": 57,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "COMUNIDAD_ACOGIDA",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-07-05",
+    "family": {
+      "fullName": "Familiar de Julián",
+      "relationship": "Compañero/a",
+      "age": 49
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-07-21",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-07-21",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-089",
+    "fullName": "Carolina Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200089",
+    "sex": "MUJER",
+    "age": 42,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Venezolana",
+    "populationType": "MIGRANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-07-07",
+    "family": {
+      "fullName": "Familiar de Carolina",
+      "relationship": "Madre",
+      "age": 34
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-07-24",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-090",
+    "fullName": "Alejandro Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200090",
+    "sex": "HOMBRE",
+    "age": 24,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "FADV",
+    "registeredOn": "2026-07-09",
+    "family": {
+      "fullName": "Familiar de Alejandro",
+      "relationship": "Padre",
+      "age": 16
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-07-27",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-07-27",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-091",
+    "fullName": "Mariana Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200091",
+    "sex": "MUJER",
+    "age": 26,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-07-11",
+    "family": {
+      "fullName": "Familiar de Mariana",
+      "relationship": "Hija",
+      "age": 18
+    },
+    "program": {
+      "name": "1.1.1 Kits higiénico-sanitarios familiares",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-07-30",
+      "description": "1.1.1 Kits higiénico-sanitarios familiares",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-092",
+    "fullName": "Mateo Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200092",
+    "sex": "HOMBRE",
+    "age": 27,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-07-13",
+    "family": {
+      "fullName": "Familiar de Mateo",
+      "relationship": "Hijo",
+      "age": 19
+    },
+    "program": {
+      "name": "1.1.2 Kits de dignidad",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-08-02",
+      "description": "1.1.2 Kits de dignidad",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-08-02",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-093",
+    "fullName": "Sara Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200093",
+    "sex": "MUJER",
+    "age": 32,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "COOPI",
+    "registeredOn": "2026-07-15",
+    "family": {
+      "fullName": "Familiar de Sara",
+      "relationship": "Hermana",
+      "age": 24
+    },
+    "program": {
+      "name": "1.1.3 Kits con productos alimenticios",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-08-05",
+      "description": "1.1.3 Kits con productos alimenticios",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-094",
+    "fullName": "Daniel Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200094",
+    "sex": "HOMBRE",
+    "age": 47,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "FADV",
+    "registeredOn": "2026-07-17",
+    "family": {
+      "fullName": "Familiar de Daniel",
+      "relationship": "Compañero/a",
+      "age": 39
+    },
+    "program": {
+      "name": "1.1.4 Kits para bebés",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-08-08",
+      "description": "1.1.4 Kits para bebés",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-08-08",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-095",
+    "fullName": "Laura Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200095",
+    "sex": "MUJER",
+    "age": 29,
+    "municipality": "Turbo",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-01-10",
+    "family": {
+      "fullName": "Familiar de Laura",
+      "relationship": "Madre",
+      "age": 21
+    },
+    "program": {
+      "name": "1.2 Gestiones de caso de VBG",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-02",
+      "description": "1.2 Gestiones de caso de VBG",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-096",
+    "fullName": "David Córdoba Valencia",
+    "documentType": "CC",
+    "documentNumber": "FIC-200096",
+    "sex": "HOMBRE",
+    "age": 54,
+    "municipality": "Apartadó",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "MIGRANTE",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-01-12",
+    "family": {
+      "fullName": "Familiar de David",
+      "relationship": "Padre",
+      "age": 46
+    },
+    "program": {
+      "name": "1.3 Fondos de emergencias",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "AYUDA",
+      "attendedOn": "2026-02-05",
+      "description": "1.3 Fondos de emergencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-02-05",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-097",
+    "fullName": "Natalia Martínez Gómez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200097",
+    "sex": "MUJER",
+    "age": 56,
+    "municipality": "Apartadó",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "COOPI",
+    "registeredOn": "2026-01-14",
+    "family": {
+      "fullName": "Familiar de Natalia",
+      "relationship": "Hija",
+      "age": 48
+    },
+    "program": {
+      "name": "1.4 Unidad móvil para identificación a la respuesta",
+      "workLine": "R1"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-08",
+      "description": "1.4 Unidad móvil para identificación a la respuesta",
+      "responsible": "COOPI",
+      "outcome": "ATENDIDO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-098",
+    "fullName": "Juan Hernández Rodríguez",
+    "documentType": "CC",
+    "documentNumber": "FIC-200098",
+    "sex": "HOMBRE",
+    "age": 39,
+    "municipality": "Turbo",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "DESPLAZADO",
+    "organization": "FADV",
+    "registeredOn": "2026-01-16",
+    "family": {
+      "fullName": "Familiar de Juan",
+      "relationship": "Hijo",
+      "age": 31
+    },
+    "program": {
+      "name": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-11",
+      "description": "2.1 Rehabilitación de un centro de salud local y equipamiento",
+      "responsible": "FADV",
+      "outcome": "EN_SEGUIMIENTO"
+    },
+    "followUp": {
+      "followedOn": "2026-02-11",
+      "progress": "Requiere seguimiento.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  },
+  {
+    "internalCode": "BEN-099",
+    "fullName": "Andrea Salazar Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200099",
+    "sex": "MUJER",
+    "age": 50,
+    "municipality": "Necoclí",
+    "zone": "URBANA",
+    "nationality": "Colombiana",
+    "populationType": "REFUGIADO_O_SOLICITANTE",
+    "organization": "HIAS Colombia",
+    "registeredOn": "2026-01-18",
+    "family": {
+      "fullName": "Familiar de Andrea",
+      "relationship": "Hermana",
+      "age": 42
+    },
+    "program": {
+      "name": "Formación y fortalecimiento de capacidades",
+      "workLine": "R2"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-02-14",
+      "description": "Formación y fortalecimiento de capacidades",
+      "responsible": "HIAS Colombia",
+      "outcome": "FINALIZADO"
+    },
+    "followUp": null
+  },
+  {
+    "internalCode": "BEN-100",
+    "fullName": "Esteban Mosquera Ríos",
+    "documentType": "CC",
+    "documentNumber": "FIC-200100",
+    "sex": "HOMBRE",
+    "age": 53,
+    "municipality": "Necoclí",
+    "zone": "RURAL",
+    "nationality": "Colombiana",
+    "populationType": "RETORNADO",
+    "organization": "Humanity & Inclusion (HI)",
+    "registeredOn": "2026-01-20",
+    "family": {
+      "fullName": "Familiar de Esteban",
+      "relationship": "Compañero/a",
+      "age": 45
+    },
+    "program": {
+      "name": "Formación para empleabilidad y competencias",
+      "workLine": "R3"
+    },
+    "attention": {
+      "kind": "ATENCION",
+      "attendedOn": "2026-01-23",
+      "description": "Formación para empleabilidad y competencias",
+      "responsible": "Humanity & Inclusion (HI)",
+      "outcome": "PENDIENTE"
+    },
+    "followUp": {
+      "followedOn": "2026-01-23",
+      "progress": "Atención pendiente.",
+      "pendingAction": "Verificar próxima entrega o cita"
+    }
+  }
+]

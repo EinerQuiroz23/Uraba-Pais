@@ -1,0 +1,9 @@
+export { MunicipioController } from "./municipioController.js";
+export { LineaTrabajoController } from "./lineaTrabajoController.js";
+export { BeneficiarioController } from "./beneficiarioController.js";
+export { ProgramaController } from "./programaController.js";
+export { AtencionController } from "./atencionController.js";
+export { SeguimientoController } from "./seguimientoController.js";
+export { ReporteController } from "./reporteController.js";
+export { DatabaseController } from "./databaseController.js";
+export { NotificacionController } from "./notificacionController.js";

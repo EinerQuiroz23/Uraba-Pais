@@ -1,0 +1,20 @@
+{
+  "name": "uraba-pais-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend MVC para el Sistema de Gestión y Seguimiento URABÁ-PAÍS (Hackathon)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node src/database/seed.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.1"
+  }
+}

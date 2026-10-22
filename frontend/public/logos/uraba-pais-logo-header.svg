@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 96" role="img" aria-labelledby="title desc">
+  <title id="title">Urabá País</title>
+  <desc id="desc">Logotipo compacto de Urabá País para cabecera web.</desc>
+  <g transform="translate(0,4) scale(0.92)">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 78c14 8 46 8 60 0" stroke="#E3A23A" stroke-width="3.5"/>
+      <path d="M20 72C20 34 76 34 76 72" stroke="#0E7A62" stroke-width="8"/>
+      <path d="M70 36c10-7 18-4 16 4-7 1-12 0-16-4z" fill="#0E7A62" stroke="none"/>
+    </g>
+    <g>
+      <rect x="31" y="50" width="8" height="24" rx="4" fill="#164E73"/>
+      <rect x="44" y="38" width="8" height="36" rx="4" fill="#0B6350"/>
+      <rect x="57" y="26" width="8" height="48" rx="4" fill="#E3A23A"/>
+    </g>
+  </g>
+  <g font-family="Inter, 'Plus Jakarta Sans', 'Segoe UI', sans-serif">
+    <text x="108" y="58" font-size="36" font-weight="650" fill="#17312C" letter-spacing="-0.7">Urabá</text>
+    <text x="208" y="58" font-size="36" font-weight="500" fill="#0E7A62" letter-spacing="-0.5">País</text>
+  </g>
+</svg>

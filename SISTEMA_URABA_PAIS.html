@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URABÁ-PAÍS | Sistema de Gestión y Seguimiento de Beneficiarios</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React & ReactDOM CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- Babel Standalone para JSX en el navegador -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    @media print {
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 selection:bg-sky-500 selection:text-white min-h-screen">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useMemo } = React;
+
+    // --- DATOS SEMILLA OFICIALES URABÁ-PAÍS ---
+    const INITIAL_SEED = {
+      programas: [
+        {
+          id: "PROG-01",
+          codigo: "ASIS-HUM",
+          nombre: "Asistencia Humanitaria de Emergencia y Protección",
+          linea_trabajo: "Asistencia humanitaria y protección",
+          organizacion_lider: "COOPI",
+          descripcion: "Orientación en necesidades urgentes, kits de habitabilidad, alimentos e insumos de primera necesidad.",
+          cupos: 6700
+        },
+        {
+          id: "PROG-02",
+          codigo: "PROT-JUR",
+          nombre: "Ruta de Protección y Orientación Legal",
+          linea_trabajo: "Asistencia humanitaria y protección",
+          organizacion_lider: "Fundación HIAS Colombia",
+          descripcion: "Orientación legal en regularización migratoria, acceso a derechos y prevención de violencias.",
+          cupos: 3200
+        },
+        {
+          id: "PROG-03",
+          codigo: "SAL-BIEN",
+          nombre: "Salud Mental, Bienestar y Apoyo Psicosocial",
+          linea_trabajo: "Salud y bienestar",
+          organizacion_lider: "Fondazione L'Albero della Vita (FADV)",
+          descripcion: "Acompañamiento psicosocial individual y grupal, atención a la infancia y familias.",
+          cupos: 2911
+        },
+        {
+          id: "PROG-04",
+          codigo: "DISC-INCL",
+          nombre: "Rehabilitación Basada en Comunidad e Inclusión",
+          linea_trabajo: "Salud y bienestar",
+          organizacion_lider: "Humanity and Inclusion (HI)",
+          descripcion: "Atención, rehabilitación física, apoyos funcionales y accesibilidad para personas con discapacidad.",
+          cupos: 1500
+        },
+        {
+          id: "PROG-05",
+          codigo: "SOC-ECON",
+          nombre: "Integración Socioeconómica y Medios de Vida",
+          linea_trabajo: "Integración socioeconómica y cohesión social",
+          organizacion_lider: "COOPI & FADV",
+          descripcion: "Formación para el empleo, fortalecimiento de emprendimientos locales y cohesión comunitaria.",
+          cupos: 1836
+        }
+      ],
+      beneficiarios: [
+        {
+          id: "BEN-001",
+          codigo_interno: "URB-2026-0001",
+          nombres: "María Elena",
+          apellidos: "Gómez Rentería",
+          tipo_documento: "CC",
+          numero_documento: "1038472910",
+          fecha_nacimiento: "1988-05-14",
+          edad: 38,
+          genero: "Femenino",
+          telefono: "3127894561",
+          municipio: "Apartadó",
+          direccion_comunidad: "Barrio Obrero, Sector La Paz",
+          condicion_poblacional: "Víctima del conflicto armado",
+          discapacidad: "Ninguna",
+          autorizacion_datos: true,
+          fecha_registro: "2026-02-10T09:30:00.000Z",
+          familiares: [
+            { id: "FAM-01", nombres: "Carlos Andrés Gómez", parentesco: "Hijo/a", edad: 14, documento: "TI 1098234123", observaciones: "Estudiante secundaria" },
+            { id: "FAM-02", nombres: "Rosa Rentería", parentesco: "Madre", edad: 64, documento: "CC 32456789", observaciones: "Adulto mayor a cargo" }
+          ]
+        },
+        {
+          id: "BEN-002",
+          codigo_interno: "URB-2026-0002",
+          nombres: "Yenifer Carolina",
+          apellidos: "Mendoza Silva",
+          tipo_documento: "PPT",
+          numero_documento: "PPT-98745632",
+          fecha_nacimiento: "1995-11-22",
+          edad: 30,
+          genero: "Femenino",
+          telefono: "3201478523",
+          municipio: "Necoclí",
+          direccion_comunidad: "Sector El Muelle",
+          condicion_poblacional: "Migrante / Refugiada",
+          discapacidad: "Ninguna",
+          autorizacion_datos: true,
+          fecha_registro: "2026-02-15T11:15:00.000Z",
+          familiares: [
+            { id: "FAM-03", nombres: "Samuel David Mendoza", parentesco: "Hijo/a", edad: 4, documento: "Sin Documento", observaciones: "En trámite registro civil" }
+          ]
+        },
+        {
+          id: "BEN-003",
+          codigo_interno: "URB-2026-0003",
+          nombres: "José Luis",
+          apellidos: "Mosquera Palacios",
+          tipo_documento: "CC",
+          numero_documento: "71289456",
+          fecha_nacimiento: "1979-08-03",
+          edad: 47,
+          genero: "Masculino",
+          telefono: "3145698712",
+          municipio: "Turbo",
+          direccion_comunidad: "Corregimiento Nueva Colonia",
+          condicion_poblacional: "Comunidad de acogida",
+          discapacidad: "Física",
+          autorizacion_datos: true,
+          fecha_registro: "2026-02-20T14:00:00.000Z",
+          familiares: [
+            { id: "FAM-04", nombres: "Luz Dary Mosquera", parentesco: "Cónyuge / Pareja", edad: 45, documento: "CC 43567890", observaciones: "Apoyo familiar" }
+          ]
+        }
+      ],
+      vinculaciones: [
+        {
+          id: "VINC-001",
+          beneficiario_id: "BEN-001",
+          codigo_interno: "URB-2026-0001",
+          programa_id: "PROG-01",
+          programa_nombre: "Asistencia Humanitaria de Emergencia y Protección",
+          linea_trabajo: "Asistencia humanitaria y protección",
+          fecha_vinculacion: "2026-02-10",
+          estado: "finalizado",
+          observaciones: "Entrega inicial completada a conformidad."
+        },
+        {
+          id: "VINC-002",
+          beneficiario_id: "BEN-001",
+          codigo_interno: "URB-2026-0001",
+          programa_id: "PROG-05",
+          programa_nombre: "Integración Socioeconómica y Medios de Vida",
+          linea_trabajo: "Integración socioeconómica y cohesión social",
+          fecha_vinculacion: "2026-02-25",
+          estado: "en proceso",
+          observaciones: "Participando en taller de confección y emprendimiento."
+        },
+        {
+          id: "VINC-003",
+          beneficiario_id: "BEN-002",
+          codigo_interno: "URB-2026-0002",
+          programa_id: "PROG-02",
+          programa_nombre: "Ruta de Protección y Orientación Legal",
+          linea_trabajo: "Asistencia humanitaria y protección",
+          fecha_vinculacion: "2026-02-15",
+          estado: "en proceso",
+          observaciones: "Acompañamiento en registro civil de su hijo menor."
+        }
+      ],
+      atenciones: [
+        {
+          id: "ATEN-001",
+          beneficiario_id: "BEN-001",
+          codigo_interno: "URB-2026-0001",
+          fecha: "2026-02-12",
+          tipo_atencion: "Entrega de Kit de Emergencia / Habitabilidad",
+          linea_trabajo: "Asistencia humanitaria y protección",
+          descripcion: "Entrega de kit de higiene familiar y alimentos no perecederos.",
+          responsable: "Laura Carmona (Trabajadora Social)",
+          entidad: "COOPI",
+          resultado: "Kit entregado con firma de planilla de entrega humanitaria.",
+          remision: "Remitida a FADV para valoración psicosocial."
+        },
+        {
+          id: "ATEN-002",
+          beneficiario_id: "BEN-001",
+          codigo_interno: "URB-2026-0001",
+          fecha: "2026-03-05",
+          tipo_atencion: "Capacitación para el Empleo / Taller",
+          linea_trabajo: "Integración socioeconómica y cohesión social",
+          descripcion: "Módulo I: Modelado de negocio y costos para emprendimientos.",
+          responsable: "Mateo Vélez (Facilitador Emprendimiento)",
+          entidad: "FADV",
+          resultado: "Asistencia completa, plan de negocio inicial elaborado.",
+          remision: "Ninguna"
+        },
+        {
+          id: "ATEN-003",
+          beneficiario_id: "BEN-002",
+          codigo_interno: "URB-2026-0002",
+          fecha: "2026-02-18",
+          tipo_atencion: "Asesoría Legal / Regularización Migratoria",
+          linea_trabajo: "Asistencia humanitaria y protección",
+          descripcion: "Orientación jurídica para trámite de nacionalidad del menor.",
+          responsable: "Dra. Natalia Hincapié (Abogada HIAS)",
+          entidad: "Fundación HIAS Colombia",
+          resultado: "Documentación radicada ante Registraduría de Necoclí.",
+          remision: "Defensoría del Pueblo"
+        }
+      ],
+      seguimientos: [
+        {
+          id: "SEG-001",
+          beneficiario_id: "BEN-001",
+          codigo_interno: "URB-2026-0001",
+          fecha: "2026-03-12",
+          avance_novedad: "La beneficiaria inició producción de prendas y organizó su espacio de trabajo.",
+          observaciones: "Muestra alta motivación y estabilidad en vivienda.",
+          accion_pendiente: "Entregar kit de insumos y telas programado.",
+          proximo_contacto: "2026-04-05",
+          estado_pendiente: "pendiente"
+        },
+        {
+          id: "SEG-002",
+          beneficiario_id: "BEN-002",
+          codigo_interno: "URB-2026-0002",
+          fecha: "2026-03-02",
+          avance_novedad: "La Registraduría asignó fecha para toma de huellas del menor.",
+          observaciones: "Usuaria asistió puntualmente a la cita preparatoria.",
+          accion_pendiente: "Acompañar a cita en Registraduría de Necoclí.",
+          proximo_contacto: "2026-04-15",
+          estado_pendiente: "pendiente"
+        }
+      ]
+    };
+
+    // --- APLICACIÓN PRINCIPAL REACT ---
+    function App() {
+      // Estado de Base de Datos
+      const [db, setDb] = useState(() => {
+        const local = localStorage.getItem('uraba_hackathon_db');
+        if (local) {
+          try { return JSON.parse(local); } catch(e) {}
+        }
+        return INITIAL_SEED;
+      });
+
+      useEffect(() => {
+        localStorage.setItem('uraba_hackathon_db', JSON.stringify(db));
+      }, [db]);
+
+      const [activeTab, setActiveTab] = useState('guia_flujo');
+      const [selectedBenId, setSelectedBenId] = useState('BEN-001');
+      const [currentRole, setCurrentRole] = useState('Administrador');
+      const [highContrast, setHighContrast] = useState(false);
+
+      // --- MÓDULO 1: BÚSQUEDA Y REGISTRO ---
+      const [searchQuery, setSearchQuery] = useState('');
+      const [filterMuni, setFilterMuni] = useState('Todos');
+      const [showRegisterModal, setShowRegisterModal] = useState(false);
+      const [dupAlert, setDupAlert] = useState(null);
+
+      const [formBen, setFormBen] = useState({
+        nombres: '',
+        apellidos: '',
+        tipo_documento: 'CC',
+        numero_documento: '',
+        fecha_nacimiento: '',
+        edad: '',
+        genero: 'Femenino',
+        telefono: '',
+        municipio: 'Apartadó',
+        direccion_comunidad: '',
+        condicion_poblacional: 'Víctima del conflicto armado',
+        discapacidad: 'Ninguna',
+        autorizacion_datos: false,
+        familiares: []
+      });
+
+      const [newFam, setNewFam] = useState({ nombres: '', parentesco: 'Hijo/a', edad: '', documento: '', observaciones: '' });
+
+      // Verificación reactiva anti-duplicados
+      useEffect(() => {
+        if (formBen.numero_documento && formBen.numero_documento.trim().length >= 4 && formBen.tipo_documento !== 'SIN_DOCUMENTO') {
+          const doc = formBen.numero_documento.trim().toLowerCase();
+          const match = db.beneficiarios.find(b => 
+            b.tipo_documento === formBen.tipo_documento && 
+            b.numero_documento && 
+            b.numero_documento.trim().toLowerCase() === doc
+          );
+          if (match) {
+            setDupAlert({
+              type: 'error',
+              message: `¡ALERTA REGLA ANTI-DUPLICADOS! Ya existe un registro con el documento ${formBen.tipo_documento} ${formBen.numero_documento}.`,
+              existing: match
+            });
+          } else {
+            setDupAlert(null);
+          }
+        } else {
+          setDupAlert(null);
+        }
+      }, [formBen.tipo_documento, formBen.numero_documento, db.beneficiarios]);
+
+      const handleAddFamiliarToForm = () => {
+        if (!newFam.nombres.trim()) return;
+        setFormBen(prev => ({
+          ...prev,
+          familiares: [...prev.familiares, { ...newFam, id: `fam-${Date.now()}` }]
+        }));
+        setNewFam({ nombres: '', parentesco: 'Hijo/a', edad: '', documento: '', observaciones: '' });
+      };
+
+      const handleRegisterBeneficiary = (e) => {
+        e.preventDefault();
+        if (!formBen.autorizacion_datos) {
+          alert('Requisito Obligatorio: Debe registrar la autorización para el tratamiento de datos personales (Habeas Data).');
+          return;
+        }
+        if (dupAlert && dupAlert.type === 'error') {
+          alert('Bloqueado: La persona ya existe con ese documento de identidad.');
+          return;
+        }
+
+        const nextSeq = db.beneficiarios.length + 1;
+        const seqStr = String(nextSeq).padStart(4, '0');
+        const codigo_interno = `URB-2026-${seqStr}`;
+        const nuevo = {
+          ...formBen,
+          id: `BEN-${seqStr}`,
+          codigo_interno,
+          fecha_registro: new Date().toISOString()
+        };
+
+        setDb(prev => ({
+          ...prev,
+          beneficiarios: [nuevo, ...prev.beneficiarios]
+        }));
+
+        setShowRegisterModal(false);
+        setSelectedBenId(nuevo.id);
+        setActiveTab('ficha360');
+        alert(`¡Beneficiario registrado exitosamente! Código Inmutable Asignado: ${codigo_interno}`);
+      };
+
+      // --- MÓDULO 2: VINCULACIÓN ---
+      const [showVincModal, setShowVincModal] = useState(false);
+      const [formVinc, setFormVinc] = useState({
+        beneficiario_id: 'BEN-001',
+        programa_id: 'PROG-01',
+        fecha_vinculacion: new Date().toISOString().split('T')[0],
+        estado: 'inscrito',
+        observaciones: ''
+      });
+
+      const handleCreateVinculacion = (e) => {
+        e.preventDefault();
+        const ben = db.beneficiarios.find(b => b.id === formVinc.beneficiario_id);
+        const prog = db.programas.find(p => p.id === formVinc.programa_id);
+        if (!ben || !prog) return;
+
+        const newVinc = {
+          id: `VINC-${String(db.vinculaciones.length + 1).padStart(3, '0')}`,
+          beneficiario_id: ben.id,
+          codigo_interno: ben.codigo_interno,
+          programa_id: prog.id,
+          programa_nombre: prog.nombre,
+          linea_trabajo: prog.linea_trabajo,
+          fecha_vinculacion: formVinc.fecha_vinculacion,
+          estado: formVinc.estado,
+          observaciones: formVinc.observaciones
+        };
+
+        setDb(prev => ({ ...prev, vinculaciones: [newVinc, ...prev.vinculaciones] }));
+        setShowVincModal(false);
+        alert('Beneficiario vinculado exitosamente.');
+      };
+
+      const handleUpdateEstadoVinc = (vincId, newEstado) => {
+        setDb(prev => ({
+          ...prev,
+          vinculaciones: prev.vinculaciones.map(v => v.id === vincId ? { ...v, estado: newEstado } : v)
+        }));
+      };
+
+      // --- MÓDULO 3: ATENCIÓN Y SEGUIMIENTO ---
+      const [tabAtencionSub, setTabAtencionSub] = useState('atenciones');
+      const [showAtenModal, setShowAtenModal] = useState(false);
+      const [showSegModal, setShowSegModal] = useState(false);
+
+      const [formAten, setFormAten] = useState({
+        beneficiario_id: 'BEN-001',
+        fecha: new Date().toISOString().split('T')[0],
+        tipo_atencion: 'Entrega de Kit de Habitabilidad',
+        linea_trabajo: 'Asistencia humanitaria y protección',
+        descripcion: '',
+        responsable: 'Laura Carmona',
+        entidad: 'COOPI',
+        resultado: 'Firma a satisfacción',
+        remision: 'Ninguna'
+      });
+
+      const [formSeg, setFormSeg] = useState({
+        beneficiario_id: 'BEN-001',
+        fecha: new Date().toISOString().split('T')[0],
+        avance_novedad: '',
+        observaciones: '',
+        accion_pendiente: '',
+        proximo_contacto: '',
+        estado_pendiente: 'pendiente'
+      });
+
+      const handleCreateAtencion = (e) => {
+        e.preventDefault();
+        const ben = db.beneficiarios.find(b => b.id === formAten.beneficiario_id);
+        const newA = {
+          ...formAten,
+          id: `ATEN-${String(db.atenciones.length + 1).padStart(3, '0')}`,
+          codigo_interno: ben ? ben.codigo_interno : ''
+        };
+        setDb(prev => ({ ...prev, atenciones: [newA, ...prev.atenciones] }));
+        setShowAtenModal(false);
+        alert('Atención registrada con éxito.');
+      };
+
+      const handleCreateSeguimiento = (e) => {
+        e.preventDefault();
+        const ben = db.beneficiarios.find(b => b.id === formSeg.beneficiario_id);
+        const newS = {
+          ...formSeg,
+          id: `SEG-${String(db.seguimientos.length + 1).padStart(3, '0')}`,
+          codigo_interno: ben ? ben.codigo_interno : ''
+        };
+        setDb(prev => ({ ...prev, seguidores: [newS, ...prev.seguimientos], seguimientos: [newS, ...prev.seguimientos] }));
+        setShowSegModal(false);
+        alert('Seguimiento registrado con compromiso pendiente.');
+      };
+
+      const handleToggleSeguimiento = (id) => {
+        setDb(prev => ({
+          ...prev,
+          seguimientos: prev.seguimientos.map(s => s.id === id ? {
+            ...s,
+            estado_pendiente: s.estado_pendiente === 'pendiente' ? 'completado' : 'pendiente'
+          } : s)
+        }));
+      };
+
+      // --- MÓDULO 4: CÁLCULO DE MÉTRICAS DINÁMICAS (REGLA DE CONTEO) ---
+      const metricas = useMemo(() => {
+        const unicos = new Set(db.beneficiarios.map(b => b.codigo_interno)).size;
+        const totalVinc = db.vinculaciones.length;
+        const totalAten = db.atenciones.length;
+        const totalPend = db.seguimientos.filter(s => s.estado_pendiente === 'pendiente').length;
+
+        const porMunicipio = { Apartadó: 0, Turbo: 0, Necoclí: 0, 'Otro Urabá': 0 };
+        db.beneficiarios.forEach(b => {
+          if (porMunicipio[b.municipio] !== undefined) porMunicipio[b.municipio]++;
+          else porMunicipio['Otro Urabá']++;
+        });
+
+        const porLinea = {
+          'Asistencia humanitaria y protección': { participaciones: 0, atenciones: 0 },
+          'Salud y bienestar': { participaciones: 0, atenciones: 0 },
+          'Integración socioeconómica y cohesión social': { participaciones: 0, atenciones: 0 }
+        };
+
+        db.vinculaciones.forEach(v => {
+          if (porLinea[v.linea_trabajo]) porLinea[v.linea_trabajo].participaciones++;
+        });
+        db.atenciones.forEach(a => {
+          if (porLinea[a.linea_trabajo]) porLinea[a.linea_trabajo].atenciones++;
+        });
+
+        return { unicos, totalVinc, totalAten, totalPend, porMunicipio, porLinea };
+      }, [db]);
+
+      // Ficha seleccionada
+      const currentBeneficiario = db.beneficiarios.find(b => b.id === selectedBenId) || db.beneficiarios[0];
+      const vincsBeneficiario = db.vinculaciones.filter(v => v.beneficiario_id === currentBeneficiario?.id);
+      const atenBeneficiario = db.atenciones.filter(a => a.beneficiario_id === currentBeneficiario?.id);
+      const segBeneficiario = db.seguimientos.filter(s => s.beneficiario_id === currentBeneficiario?.id);
+
+      // Exportar CSV
+      const handleExportCSV = () => {
+        const rows = [
+          ['Reporte Oficial del Proyecto URABÁ-PAÍS'],
+          ['Fecha', new Date().toLocaleString()],
+          [],
+          ['INDICADOR', 'CANTIDAD'],
+          ['Beneficiarios Únicos', metricas.unicos],
+          ['Participaciones Totales', metricas.totalVinc],
+          ['Atenciones Entregadas', metricas.totalAten],
+          ['Seguimientos Pendientes', metricas.totalPend],
+          [],
+          ['MUNICIPIO', 'BENEFICIARIOS ÚNICOS'],
+          ...Object.entries(metricas.porMunicipio).map(([m, c]) => [m, c])
+        ];
+        const csvContent = 'data:text/csv;charset=utf-8,' + rows.map(e => e.join(',')).join('\n');
+        const link = document.createElement('a');
+        link.setAttribute('href', encodeURI(csvContent));
+        link.setAttribute('download', `reporte_uraba_${new Date().toISOString().split('T')[0]}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+
+      return (
+        <div className={`min-h-screen flex flex-col ${highContrast ? 'bg-black text-yellow-300' : 'bg-slate-50 text-slate-800'}`}>
+          {/* HEADER PRINCIPAL */}
+          <header className={`border-b sticky top-0 z-40 shadow-sm ${highContrast ? 'bg-black border-yellow-400' : 'bg-white border-slate-200'}`}>
+            <div className="max-w-7xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs border-b border-slate-100">
+              <div className="flex items-center gap-2 font-bold text-sky-800 text-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>PROYECTO URABÁ-PAÍS</span>
+                <span className="text-slate-300 font-normal">|</span>
+                <span className="hidden md:inline text-slate-500 font-normal">COOPI · HIAS · FADV · Humanity & Inclusion (AICS)</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1.5 bg-slate-100 rounded-lg px-2 py-1">
+                  <span className="font-semibold text-slate-600">Rol:</span>
+                  <select
+                    value={currentRole}
+                    onChange={(e) => setCurrentRole(e.target.value)}
+                    className="bg-transparent font-bold text-slate-800 focus:outline-none cursor-pointer"
+                  >
+                    <option value="Administrador">Administrador</option>
+                    <option value="Funcionario de Campo">Funcionario de Campo</option>
+                    <option value="Consulta / Auditor">Consulta (Anonimizada)</option>
+                  </select>
+                </div>
+
+                <button
+                  onClick={() => setHighContrast(!highContrast)}
+                  className="px-2.5 py-1 rounded-lg border border-slate-200 text-xs font-medium hover:bg-slate-100"
+                >
+                  {highContrast ? 'Contraste Normal' : 'Alto Contraste'}
+                </button>
+
+                <button
+                  onClick={() => {
+                    if (confirm('¿Restablecer datos semilla iniciales de Urabá-País?')) {
+                      setDb(INITIAL_SEED);
+                      localStorage.setItem('uraba_hackathon_db', JSON.stringify(INITIAL_SEED));
+                    }
+                  }}
+                  className="px-2.5 py-1 rounded-lg border border-slate-200 text-xs text-slate-600 hover:bg-slate-100"
+                >
+                  Reiniciar Datos
+                </button>
+              </div>
+            </div>
+
+            {/* BARRA DE NAVEGACIÓN */}
+            <div className="max-w-7xl mx-auto px-4">
+              <nav className="flex space-x-1 py-2 overflow-x-auto">
+                {[
+                  { id: 'guia_flujo', label: 'Flujo Demostración (5 Pasos)', badge: 'Jurado' },
+                  { id: 'beneficiarios', label: '1. Beneficiarios & Familias' },
+                  { id: 'programas', label: '2. Programas & Vinculación' },
+                  { id: 'atenciones', label: '3. Atención & Seguimiento' },
+                  { id: 'reportes', label: '4. Consultas & Reportes' },
+                  { id: 'ficha360', label: 'Ficha Consolidada 360°' },
+                  { id: 'ia', label: 'Asistente IA (Ético)', badge: 'Opcional' }
+                ].map(tab => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all flex items-center gap-1.5 ${
+                      activeTab === tab.id
+                        ? 'bg-sky-600 text-white shadow-sm'
+                        : 'text-slate-600 hover:bg-slate-100 hover:text-sky-600'
+                    }`}
+                  >
+                    <span>{tab.label}</span>
+                    {tab.badge && (
+                      <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold uppercase ${
+                        tab.badge === 'Jurado' ? 'bg-amber-100 text-amber-900' : 'bg-emerald-100 text-emerald-900'
+                      }`}>
+                        {tab.badge}
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </nav>
+            </div>
+          </header>
+
+          {/* CONTENIDO PRINCIPAL */}
+          <main className="max-w-7xl mx-auto px-4 py-6 flex-1 w-full space-y-6">
+
+            {/* TAB 1: FLUJO DEMOSTRACIÓN JURADO */}
+            {activeTab === 'guia_flujo' && (
+              <div className="space-y-6">
+                <div className="bg-gradient-to-r from-sky-900 via-sky-800 to-indigo-900 text-white rounded-3xl p-6 shadow-lg">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-sky-100">
+                    Guía Oficial Hackathon URABÁ-PAÍS
+                  </span>
+                  <h2 className="text-2xl font-black mt-2">Demostración en Vivo del Flujo Mínimo Obligatorio</h2>
+                  <p className="text-sm text-sky-100 mt-1 max-w-2xl leading-relaxed">
+                    Recorrido de principio a fin según las secciones 7 y 8 de la Guía: <strong>Registro → Vinculación → Atención → Seguimiento → Reporte</strong> con los 3 casos de prueba requeridos.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full">Prueba Obligatoria 1</span>
+                      <h3 className="font-bold text-slate-800 text-sm mt-2">Persona Nueva y Núcleo Familiar</h3>
+                      <p className="text-xs text-slate-600 mt-1">
+                        Buscar antes de registrar, generar el código inmutable <code>URB-2026-XXXX</code>, asociar al menos un familiar y marcar Habeas Data.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setActiveTab('beneficiarios')}
+                      className="mt-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold transition-colors"
+                    >
+                      Probar Registro
+                    </button>
+                  </div>
+
+                  <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full">Prueba Obligatoria 2</span>
+                      <h3 className="font-bold text-slate-800 text-sm mt-2">Bloqueo Anti-Duplicados</h3>
+                      <p className="text-xs text-slate-600 mt-1">
+                        Intentar registrar el documento CC 1038472910. El sistema detecta coincidencia exacta, bloquea el guardado y ofrece abrir la ficha existente.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => {
+                        setActiveTab('beneficiarios');
+                        setShowRegisterModal(true);
+                        setFormBen(prev => ({ ...prev, tipo_documento: 'CC', numero_documento: '1038472910' }));
+                      }}
+                      className="mt-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold transition-colors"
+                    >
+                      Simular Duplicado
+                    </button>
+                  </div>
+
+                  <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-full">Prueba Obligatoria 3</span>
+                      <h3 className="font-bold text-slate-800 text-sm mt-2">Historial Completo & Conteo</h3>
+                      <p className="text-xs text-slate-600 mt-1">
+                        Verificar que una persona con múltiples programas y ayudas conserva 1 solo código y cuenta como 1 beneficiario único en los reportes dinámicos.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => {
+                        setSelectedBenId('BEN-001');
+                        setActiveTab('ficha360');
+                      }}
+                      className="mt-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold transition-colors"
+                    >
+                      Ver Ficha 360°
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 2: MÓDULO 1 BENEFICIARIOS Y FAMILIAS */}
+            {activeTab === 'beneficiarios' && (
+              <div className="space-y-4">
+                <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row gap-3 items-center justify-between">
+                  <div className="relative flex-1 w-full">
+                    <input
+                      type="text"
+                      placeholder="Búsqueda previa obligatoria: Cédula, PPT, Código Inmutable, Nombres..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none"
+                    />
+                  </div>
+
+                  <div className="flex gap-2 w-full md:w-auto">
+                    <select
+                      value={filterMuni}
+                      onChange={(e) => setFilterMuni(e.target.value)}
+                      className="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs text-slate-700 focus:ring-2 focus:ring-sky-500"
+                    >
+                      <option value="Todos">Municipio: Todos</option>
+                      <option value="Apartadó">Apartadó</option>
+                      <option value="Turbo">Turbo</option>
+                      <option value="Necoclí">Necoclí</option>
+                    </select>
+
+                    <button
+                      onClick={() => {
+                        setFormBen({
+                          nombres: '',
+                          apellidos: '',
+                          tipo_documento: 'CC',
+                          numero_documento: '',
+                          fecha_nacimiento: '',
+                          edad: '',
+                          genero: 'Femenino',
+                          telefono: '',
+                          municipio: 'Apartadó',
+                          direccion_comunidad: '',
+                          condicion_poblacional: 'Víctima del conflicto armado',
+                          discapacidad: 'Ninguna',
+                          autorizacion_datos: false,
+                          familiares: []
+                        });
+                        setDupAlert(null);
+                        setShowRegisterModal(true);
+                      }}
+                      className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold whitespace-nowrap shadow-sm"
+                    >
+                      + Nuevo Beneficiario
+                    </button>
+                  </div>
+                </div>
+
+                {/* TABLA DE BENEFICIARIOS */}
+                <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                  <div className="p-4 border-b border-slate-100 flex items-center justify-between">
+                    <h3 className="font-bold text-slate-800 text-sm">
+                      Padrón Central de Beneficiarios ({db.beneficiarios.length})
+                    </h3>
+                    <span className="text-[11px] font-semibold text-slate-500">
+                      Regla de Oro: 1 Registro Maestro por Persona
+                    </span>
+                  </div>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs text-slate-600">
+                      <thead className="bg-slate-50 text-[11px] uppercase font-bold text-slate-400 border-b border-slate-100">
+                        <tr>
+                          <th className="px-4 py-3">Código Inmutable</th>
+                          <th className="px-4 py-3">Nombres y Apellidos</th>
+                          <th className="px-4 py-3">Documento</th>
+                          <th className="px-4 py-3">Municipio</th>
+                          <th className="px-4 py-3">Población</th>
+                          <th className="px-4 py-3">Familia</th>
+                          <th className="px-4 py-3 text-right">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100">
+                        {db.beneficiarios
+                          .filter(b => {
+                            const q = searchQuery.toLowerCase();
+                            const matchQ = (b.codigo_interno && b.codigo_interno.toLowerCase().includes(q)) ||
+                                           (b.nombres && b.nombres.toLowerCase().includes(q)) ||
+                                           (b.apellidos && b.apellidos.toLowerCase().includes(q)) ||
+                                           (b.numero_documento && b.numero_documento.toLowerCase().includes(q));
+                            const matchM = filterMuni === 'Todos' || b.municipio === filterMuni;
+                            return matchQ && matchM;
+                          })
+                          .map(b => (
+                            <tr key={b.id} className="hover:bg-slate-50 transition-colors">
+                              <td className="px-4 py-3 font-mono font-bold text-sky-700">
+                                {b.codigo_interno}
+                              </td>
+                              <td className="px-4 py-3 font-medium text-slate-900">
+                                <div>{b.nombres} {b.apellidos}</div>
+                                <div className="text-[11px] text-slate-400">{b.genero} · {b.edad ? `${b.edad} años` : ''}</div>
+                              </td>
+                              <td className="px-4 py-3">
+                                {b.tipo_documento === 'SIN_DOCUMENTO' || !b.numero_documento ? (
+                                  <span className="bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded-full font-semibold">
+                                    Sin Documento
+                                  </span>
+                                ) : (
+                                  <span>{b.tipo_documento}: {b.numero_documento}</span>
+                                )}
+                              </td>
+                              <td className="px-4 py-3 font-semibold text-slate-700">{b.municipio}</td>
+                              <td className="px-4 py-3">
+                                <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full font-medium">
+                                  {b.condicion_poblacional}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3 font-semibold text-slate-700">
+                                {b.familiares ? b.familiares.length : 0} integrantes
+                              </td>
+                              <td className="px-4 py-3 text-right space-x-1.5">
+                                <button
+                                  onClick={() => {
+                                    setSelectedBenId(b.id);
+                                    setActiveTab('ficha360');
+                                  }}
+                                  className="px-2.5 py-1 rounded-lg bg-sky-50 text-sky-700 hover:bg-sky-100 font-bold"
+                                >
+                                  Ficha 360°
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    setFormVinc(prev => ({ ...prev, beneficiario_id: b.id }));
+                                    setShowVincModal(true);
+                                  }}
+                                  className="px-2.5 py-1 rounded-lg bg-sky-600 text-white hover:bg-sky-700 font-bold"
+                                >
+                                  Vincular
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 3: MÓDULO 2 PROGRAMAS Y VINCULACIÓN */}
+            {activeTab === 'programas' && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-bold text-slate-800 text-base">Oferta de Programas URABÁ-PAÍS (3 Líneas)</h3>
+                  <button
+                    onClick={() => setShowVincModal(true)}
+                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-sm"
+                  >
+                    + Vincular Beneficiario a Programa
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {db.programas.map(prog => {
+                    const count = db.vinculaciones.filter(v => v.programa_id === prog.id).length;
+                    return (
+                      <div key={prog.id} className="bg-white rounded-3xl border border-slate-200 p-5 shadow-sm space-y-2">
+                        <div className="flex justify-between items-center text-xs">
+                          <span className="font-bold text-slate-400">{prog.codigo}</span>
+                          <span className="font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">{prog.organizacion_lider}</span>
+                        </div>
+                        <h4 className="font-bold text-slate-800 text-sm">{prog.nombre}</h4>
+                        <div className="text-[11px] font-semibold text-slate-500">{prog.linea_trabajo}</div>
+                        <p className="text-xs text-slate-600 leading-relaxed">{prog.descripcion}</p>
+                        <div className="pt-2 border-t border-slate-100 flex justify-between text-xs font-semibold">
+                          <span className="text-slate-400">Vinculados:</span>
+                          <span className="text-sky-700">{count} personas</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* TABLA DE VINCULACIONES */}
+                <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                  <div className="p-4 border-b border-slate-100">
+                    <h3 className="font-bold text-slate-800 text-sm">Registro de Vinculaciones Activas</h3>
+                  </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-xs text-slate-600">
+                      <thead className="bg-slate-50 uppercase text-[11px] font-bold text-slate-400 border-b border-slate-100">
+                        <tr>
+                          <th className="px-4 py-3">Beneficiario</th>
+                          <th className="px-4 py-3">Programa</th>
+                          <th className="px-4 py-3">Línea de Intervención</th>
+                          <th className="px-4 py-3">Fecha</th>
+                          <th className="px-4 py-3">Estado de Participación</th>
+                          <th className="px-4 py-3 text-right">Actualizar Estado</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100">
+                        {db.vinculaciones.map(v => {
+                          const b = db.beneficiarios.find(x => x.id === v.beneficiario_id);
+                          return (
+                            <tr key={v.id} className="hover:bg-slate-50">
+                              <td className="px-4 py-3 font-medium text-slate-900">
+                                <div>{b ? `${b.nombres} ${b.apellidos}` : v.codigo_interno}</div>
+                                <div className="font-mono text-sky-700 text-[11px]">{v.codigo_interno}</div>
+                              </td>
+                              <td className="px-4 py-3 font-semibold text-slate-800">{v.programa_nombre}</td>
+                              <td className="px-4 py-3 text-slate-500">{v.linea_trabajo}</td>
+                              <td className="px-4 py-3 font-mono">{v.fecha_vinculacion}</td>
+                              <td className="px-4 py-3">
+                                <span className={`px-2 py-0.5 rounded-full font-bold uppercase text-[10px] ${
+                                  v.estado === 'inscrito' ? 'bg-sky-100 text-sky-800' :
+                                  v.estado === 'en proceso' ? 'bg-amber-100 text-amber-800' :
+                                  v.estado === 'finalizado' ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'
+                                }`}>
+                                  {v.estado}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3 text-right">
+                                <select
+                                  value={v.estado}
+                                  onChange={(e) => handleUpdateEstadoVinc(v.id, e.target.value)}
+                                  className="text-xs border rounded-lg px-2 py-1 bg-white font-medium focus:ring-1 focus:ring-sky-500"
+                                >
+                                  <option value="inscrito">Inscrito</option>
+                                  <option value="en proceso">En Proceso</option>
+                                  <option value="finalizado">Finalizado</option>
+                                  <option value="retirado">Retirado</option>
+                                </select>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 4: MÓDULO 3 ATENCIÓN Y SEGUIMIENTO */}
+            {activeTab === 'atenciones' && (
+              <div className="space-y-4">
+                <div className="flex border-b border-slate-200 gap-4">
+                  <button
+                    onClick={() => setTabAtencionSub('atenciones')}
+                    className={`pb-2.5 font-bold text-xs sm:text-sm border-b-2 transition-colors ${
+                      tabAtencionSub === 'atenciones' ? 'border-emerald-600 text-emerald-700' : 'border-transparent text-slate-500'
+                    }`}
+                  >
+                    Atenciones y Ayudas Entregadas ({db.atenciones.length})
+                  </button>
+                  <button
+                    onClick={() => setTabAtencionSub('seguimientos')}
+                    className={`pb-2.5 font-bold text-xs sm:text-sm border-b-2 transition-colors ${
+                      tabAtencionSub === 'seguimientos' ? 'border-teal-600 text-teal-700' : 'border-transparent text-slate-500'
+                    }`}
+                  >
+                    Seguimientos y Pendientes ({db.seguimientos.length})
+                  </button>
+                </div>
+
+                {tabAtencionSub === 'atenciones' ? (
+                  <div className="space-y-4">
+                    <div className="flex justify-end">
+                      <button
+                        onClick={() => setShowAtenModal(true)}
+                        className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-sm"
+                      >
+                        + Registrar Atención o Ayuda
+                      </button>
+                    </div>
+
+                    <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left text-xs text-slate-600">
+                          <thead className="bg-slate-50 uppercase text-[11px] font-bold text-slate-400 border-b border-slate-100">
+                            <tr>
+                              <th className="px-4 py-3">Fecha</th>
+                              <th className="px-4 py-3">Beneficiario</th>
+                              <th className="px-4 py-3">Tipo de Ayuda</th>
+                              <th className="px-4 py-3">Descripción y Resultado</th>
+                              <th className="px-4 py-3">Responsable y Entidad</th>
+                              <th className="px-4 py-3">Remisión</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-100">
+                            {db.atenciones.map(a => {
+                              const b = db.beneficiarios.find(x => x.id === a.beneficiario_id);
+                              return (
+                                <tr key={a.id} className="hover:bg-slate-50">
+                                  <td className="px-4 py-3 font-mono">{a.fecha}</td>
+                                  <td className="px-4 py-3 font-medium text-slate-900">
+                                    <div>{b ? `${b.nombres} ${b.apellidos}` : a.codigo_interno}</div>
+                                    <div className="font-mono text-sky-700 text-[11px]">{a.codigo_interno}</div>
+                                  </td>
+                                  <td className="px-4 py-3">
+                                    <span className="bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded font-bold">
+                                      {a.tipo_atencion}
+                                    </span>
+                                  </td>
+                                  <td className="px-4 py-3">
+                                    <div className="font-medium text-slate-800">{a.descripcion}</div>
+                                    <div className="text-[11px] text-slate-500">Resultado: {a.resultado}</div>
+                                  </td>
+                                  <td className="px-4 py-3">
+                                    <div className="font-semibold text-slate-800">{a.responsable}</div>
+                                    <div className="text-sky-700 font-bold text-[11px]">{a.entidad}</div>
+                                  </td>
+                                  <td className="px-4 py-3 text-slate-500">{a.remision || 'Ninguna'}</td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    <div className="flex justify-end">
+                      <button
+                        onClick={() => setShowSegModal(true)}
+                        className="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-xl text-xs font-bold shadow-sm"
+                      >
+                        + Añadir Seguimiento
+                      </button>
+                    </div>
+
+                    <div className="space-y-3">
+                      {db.seguimientos.map(s => {
+                        const b = db.beneficiarios.find(x => x.id === s.beneficiario_id);
+                        const isPendiente = s.estado_pendiente === 'pendiente';
+                        return (
+                          <div key={s.id} className={`p-4 rounded-3xl border shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-3 ${
+                            isPendiente ? 'bg-amber-50/40 border-amber-200' : 'bg-white border-slate-200'
+                          }`}>
+                            <div className="space-y-1 text-xs">
+                              <div className="flex items-center gap-2">
+                                <span className="font-mono text-slate-400">{s.fecha}</span>
+                                <span className="font-bold text-slate-900">{b ? `${b.nombres} ${b.apellidos}` : s.codigo_interno}</span>
+                                <span className="font-mono text-sky-700 bg-sky-50 px-2 py-0.5 rounded text-[11px]">{s.codigo_interno}</span>
+                                <span className={`px-2 py-0.5 rounded-full font-bold text-[10px] ${
+                                  isPendiente ? 'bg-amber-100 text-amber-900' : 'bg-emerald-100 text-emerald-900'
+                                }`}>
+                                  {isPendiente ? 'Acción Pendiente' : 'Completado'}
+                                </span>
+                              </div>
+                              <p className="text-slate-800"><strong>Avance / Cambio:</strong> {s.avance_novedad}</p>
+                              {s.accion_pendiente && (
+                                <p className="text-amber-900 font-semibold bg-amber-100/60 p-2 rounded-xl">
+                                  Compromiso: {s.accion_pendiente} {s.proximo_contacto && `(Cita: ${s.proximo_contacto})`}
+                                </p>
+                              )}
+                            </div>
+
+                            <button
+                              onClick={() => handleToggleSeguimiento(s.id)}
+                              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors ${
+                                isPendiente ? 'bg-amber-100 text-amber-900 hover:bg-emerald-600 hover:text-white' : 'bg-slate-100 text-slate-600'
+                              }`}
+                            >
+                              {isPendiente ? 'Marcar Completado' : 'Reabrir'}
+                            </button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* TAB 5: FICHA CONSOLIDADA 360° */}
+            {activeTab === 'ficha360' && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between no-print">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold text-slate-500">Seleccionar Beneficiario:</span>
+                    <select
+                      value={selectedBenId}
+                      onChange={(e) => setSelectedBenId(e.target.value)}
+                      className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold bg-white"
+                    >
+                      {db.beneficiarios.map(b => (
+                        <option key={b.id} value={b.id}>{b.codigo_interno} - {b.nombres} {b.apellidos}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <button
+                    onClick={() => window.print()}
+                    className="px-4 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold shadow-sm"
+                  >
+                    Imprimir Ficha / Guardar PDF
+                  </button>
+                </div>
+
+                {currentBeneficiario && (
+                  <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 space-y-6">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-100">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="font-mono text-xs font-extrabold bg-sky-100 text-sky-800 px-3 py-1 rounded-lg">
+                            {currentBeneficiario.codigo_interno}
+                          </span>
+                          <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full text-xs font-semibold">
+                            {currentBeneficiario.condicion_poblacional}
+                          </span>
+                          {currentBeneficiario.autorizacion_datos && (
+                            <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2 py-0.5 rounded-full text-xs font-semibold">
+                              Habeas Data Autorizado
+                            </span>
+                          )}
+                        </div>
+                        <h2 className="text-2xl font-black text-slate-900">{currentBeneficiario.nombres} {currentBeneficiario.apellidos}</h2>
+                        <p className="text-xs text-slate-500">{currentBeneficiario.tipo_documento}: {currentBeneficiario.numero_documento || 'Sin Documento'}</p>
+                      </div>
+
+                      <div className="flex gap-3">
+                        <div className="bg-slate-50 p-3 rounded-2xl text-center min-w-[80px]">
+                          <span className="block text-2xl font-black text-blue-600">{vincsBeneficiario.length}</span>
+                          <span className="text-[10px] uppercase font-bold text-slate-400">Programas</span>
+                        </div>
+                        <div className="bg-slate-50 p-3 rounded-2xl text-center min-w-[80px]">
+                          <span className="block text-2xl font-black text-emerald-600">{atenBeneficiario.length}</span>
+                          <span className="text-[10px] uppercase font-bold text-slate-400">Atenciones</span>
+                        </div>
+                        <div className="bg-slate-50 p-3 rounded-2xl text-center min-w-[80px]">
+                          <span className="block text-2xl font-black text-amber-600">{segBeneficiario.filter(s => s.estado_pendiente === 'pendiente').length}</span>
+                          <span className="text-[10px] uppercase font-bold text-slate-400">Pendientes</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* DATOS SOCIODEMOGRÁFICOS */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                      <div>
+                        <span className="text-slate-400 block font-semibold">Municipio</span>
+                        <span className="font-bold text-slate-800 text-sm">{currentBeneficiario.municipio}</span>
+                      </div>
+                      <div>
+                        <span className="text-slate-400 block font-semibold">Comunidad / Vereda</span>
+                        <span className="font-bold text-slate-800 text-sm">{currentBeneficiario.direccion_comunidad || 'No especificada'}</span>
+                      </div>
+                      <div>
+                        <span className="text-slate-400 block font-semibold">Edad / Género</span>
+                        <span className="font-bold text-slate-800 text-sm">{currentBeneficiario.edad ? `${currentBeneficiario.edad} años` : 'N/D'} · {currentBeneficiario.genero}</span>
+                      </div>
+                      <div>
+                        <span className="text-slate-400 block font-semibold">Teléfono</span>
+                        <span className="font-bold text-slate-800 text-sm">{currentBeneficiario.telefono || 'Sin teléfono'}</span>
+                      </div>
+                    </div>
+
+                    {/* NÚCLEO FAMILIAR */}
+                    <div className="pt-4 border-t border-slate-100">
+                      <h4 className="font-bold text-slate-800 text-sm mb-2">Núcleo Familiar ({currentBeneficiario.familiares ? currentBeneficiario.familiares.length : 0})</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        {currentBeneficiario.familiares?.map((f, i) => (
+                          <div key={i} className="p-3 bg-slate-50 rounded-2xl border text-xs">
+                            <div className="font-bold text-slate-800">{f.nombres}</div>
+                            <div className="text-sky-700 font-semibold">{f.parentesco} · {f.edad} años</div>
+                            <div className="text-slate-400 text-[11px]">{f.observaciones}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* PROGRAMAS Y ATENCIONES */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
+                      <div>
+                        <h4 className="font-bold text-slate-800 text-sm mb-2">Programas Vinculados</h4>
+                        <div className="space-y-2">
+                          {vincsBeneficiario.map(v => (
+                            <div key={v.id} className="p-3 bg-slate-50 rounded-2xl text-xs space-y-1">
+                              <div className="flex justify-between font-bold">
+                                <span>{v.programa_nombre}</span>
+                                <span className="uppercase text-[10px] text-sky-800">{v.estado}</span>
+                              </div>
+                              <div className="text-slate-400 text-[11px]">Vinculado el: {v.fecha_vinculacion}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <h4 className="font-bold text-slate-800 text-sm mb-2">Atenciones y Ayudas</h4>
+                        <div className="space-y-2">
+                          {atenBeneficiario.map(a => (
+                            <div key={a.id} className="p-3 bg-slate-50 rounded-2xl text-xs space-y-1">
+                              <div className="flex justify-between font-bold">
+                                <span className="text-emerald-800">{a.tipo_atencion}</span>
+                                <span className="font-mono text-slate-400 text-[11px]">{a.fecha}</span>
+                              </div>
+                              <p className="text-slate-600">{a.descripcion}</p>
+                              <div className="text-[11px] text-slate-400">Entidad: {a.entidad} · Resp: {a.responsable}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* TAB 6: MÓDULO 4 CONSULTAS Y REPORTES */}
+            {activeTab === 'reportes' && (
+              <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-black text-slate-900 text-lg">Métricas Oficiales y Reporte Dinámico</h3>
+                    <p className="text-xs text-slate-500">Regla de conteo aplicada en tiempo real (personas únicas vs eventos)</p>
+                  </div>
+                  <button
+                    onClick={handleExportCSV}
+                    className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold shadow-sm"
+                  >
+                    Exportar Reporte (CSV)
+                  </button>
+                </div>
+
+                {/* 4 KPIS DINÁMICOS */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+                    <span className="text-xs font-bold text-sky-600 uppercase">Regla de Conteo</span>
+                    <div className="text-3xl font-black text-slate-900 mt-2">{metricas.unicos}</div>
+                    <p className="text-xs font-semibold text-slate-600 mt-1">Beneficiarios Únicos</p>
+                    <p className="text-[11px] text-slate-400">Contados 1 sola vez</p>
+                  </div>
+
+                  <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+                    <span className="text-xs font-bold text-blue-600 uppercase">Participaciones</span>
+                    <div className="text-3xl font-black text-slate-900 mt-2">{metricas.totalVinc}</div>
+                    <p className="text-xs font-semibold text-slate-600 mt-1">Vinculaciones Totales</p>
+                    <p className="text-[11px] text-slate-400">En las 3 líneas de trabajo</p>
+                  </div>
+
+                  <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+                    <span className="text-xs font-bold text-emerald-600 uppercase">Servicios</span>
+                    <div className="text-3xl font-black text-slate-900 mt-2">{metricas.totalAten}</div>
+                    <p className="text-xs font-semibold text-slate-600 mt-1">Atenciones Entregadas</p>
+                    <p className="text-[11px] text-slate-400">Kits, orientación y salud</p>
+                  </div>
+
+                  <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
+                    <span className="text-xs font-bold text-amber-600 uppercase">Acción Futura</span>
+                    <div className="text-3xl font-black text-slate-900 mt-2">{metricas.totalPend}</div>
+                    <p className="text-xs font-semibold text-slate-600 mt-1">Seguimientos Pendientes</p>
+                    <p className="text-[11px] text-slate-400">Casos con tareas activas</p>
+                  </div>
+                </div>
+
+                {/* DISTRIBUCIÓN TERRITORIAL */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+                    <h4 className="font-bold text-slate-800 text-sm">Distribución Territorial (Urabá)</h4>
+                    {Object.entries(metricas.porMunicipio).map(([muni, val]) => (
+                      <div key={muni} className="space-y-1 text-xs">
+                        <div className="flex justify-between font-semibold">
+                          <span>{muni}</span>
+                          <span>{val} personas</span>
+                        </div>
+                        <div className="w-full bg-slate-100 rounded-full h-2">
+                          <div className="bg-sky-500 h-2 rounded-full" style={{ width: `${metricas.unicos > 0 ? (val / metricas.unicos) * 100 : 0}%` }}></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3">
+                    <h4 className="font-bold text-slate-800 text-sm">Actividad por Línea de Intervención</h4>
+                    {Object.entries(metricas.porLinea).map(([linea, val]) => (
+                      <div key={linea} className="p-3 bg-slate-50 rounded-2xl flex justify-between items-center text-xs">
+                        <div>
+                          <div className="font-bold text-slate-800">{linea}</div>
+                          <div className="text-slate-400 text-[11px]">{val.participaciones} vinculaciones · {val.atenciones} atenciones</div>
+                        </div>
+                        <span className="font-bold text-sky-700 bg-sky-50 px-2 py-1 rounded">
+                          {val.participaciones + val.atenciones} eventos
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 7: ASISTENTE IA ÉTICO */}
+            {activeTab === 'ia' && (
+              <div className="space-y-4">
+                <div className="bg-amber-50 border border-amber-200 p-5 rounded-3xl text-xs text-amber-900 space-y-1">
+                  <div className="font-bold text-sm text-amber-800">Límites Éticos Activos (Sección 10.1 de la Guía)</div>
+                  <p>
+                    La inteligencia artificial opera como apoyo para los funcionarios de campo. <strong>No emite diagnósticos médicos ni jurídicos, no decide asignaciones y no revela información personal sensible.</strong>
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4 text-xs">
+                  <h3 className="font-bold text-slate-800 text-sm">Resumen de Historial y Alertas de Caso</h3>
+                  <div className="flex gap-2">
+                    <select
+                      value={selectedBenId}
+                      onChange={(e) => setSelectedBenId(e.target.value)}
+                      className="px-3 py-2 rounded-xl border border-slate-200 font-medium"
+                    >
+                      {db.beneficiarios.map(b => (
+                        <option key={b.id} value={b.id}>{b.codigo_interno} - {b.nombres} {b.apellidos}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="p-4 bg-sky-50 rounded-2xl border border-sky-100 space-y-2">
+                    <div className="font-bold text-sky-900">Síntesis Asistida:</div>
+                    <p className="text-slate-700 leading-relaxed">
+                      El beneficiario <strong>{currentBeneficiario.nombres} {currentBeneficiario.apellidos}</strong> ({currentBeneficiario.codigo_interno}) reside en el municipio de <strong>{currentBeneficiario.municipio}</strong>. Registra {vincsBeneficiario.length} participaciones en programas institucionales y {atenBeneficiario.length} atenciones humanitarias recibidas.
+                    </p>
+                    <div className="font-bold text-amber-900 mt-2">Alertas de Tareas Pendientes:</div>
+                    <ul className="list-disc list-inside text-amber-900">
+                      {segBeneficiario.filter(s => s.estado_pendiente === 'pendiente').map(s => (
+                        <li key={s.id}>Compromiso activo: "{s.accion_pendiente}" (Próximo contacto: {s.proximo_contacto || 'Por definir'}).</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </main>
+
+          {/* MODAL REGISTRO BENEFICIARIO */}
+          {showRegisterModal && (
+            <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+              <div className="bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto space-y-4">
+                <div className="flex justify-between items-center border-b pb-3">
+                  <h3 className="font-bold text-slate-800 text-sm">Alta de Beneficiario y Núcleo Familiar</h3>
+                  <button onClick={() => setShowRegisterModal(false)} className="text-slate-400 font-bold">✕</button>
+                </div>
+
+                {dupAlert && (
+                  <div className="p-3 bg-rose-50 border border-rose-200 text-rose-800 text-xs rounded-xl font-medium">
+                    {dupAlert.message}
+                  </div>
+                )}
+
+                <form onSubmit={handleRegisterBeneficiary} className="space-y-3 text-xs">
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="font-semibold block mb-1">Tipo de Documento</label>
+                      <select
+                        value={formBen.tipo_documento}
+                        onChange={(e) => setFormBen({ ...formBen, tipo_documento: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                      >
+                        <option value="CC">Cédula (CC)</option>
+                        <option value="TI">Tarjeta Identidad (TI)</option>
+                        <option value="PPT">Permiso PPT</option>
+                        <option value="SIN_DOCUMENTO">Sin Documento</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="font-semibold block mb-1">Número Documento</label>
+                      <input
+                        type="text"
+                        disabled={formBen.tipo_documento === 'SIN_DOCUMENTO'}
+                        value={formBen.numero_documento}
+                        onChange={(e) => setFormBen({ ...formBen, numero_documento: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                        placeholder="Ej: 1038472910"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="font-semibold block mb-1">Nombres *</label>
+                      <input
+                        type="text"
+                        required
+                        value={formBen.nombres}
+                        onChange={(e) => setFormBen({ ...formBen, nombres: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                      />
+                    </div>
+                    <div>
+                      <label className="font-semibold block mb-1">Apellidos</label>
+                      <input
+                        type="text"
+                        value={formBen.apellidos}
+                        onChange={(e) => setFormBen({ ...formBen, apellidos: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2">
+                    <div>
+                      <label className="font-semibold block mb-1">Municipio *</label>
+                      <select
+                        value={formBen.municipio}
+                        onChange={(e) => setFormBen({ ...formBen, municipio: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                      >
+                        <option value="Apartadó">Apartadó</option>
+                        <option value="Turbo">Turbo</option>
+                        <option value="Necoclí">Necoclí</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="font-semibold block mb-1">Edad</label>
+                      <input
+                        type="number"
+                        value={formBen.edad}
+                        onChange={(e) => setFormBen({ ...formBen, edad: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                      />
+                    </div>
+                    <div>
+                      <label className="font-semibold block mb-1">Género</label>
+                      <select
+                        value={formBen.genero}
+                        onChange={(e) => setFormBen({ ...formBen, genero: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                      >
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Otro">Otro</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="font-semibold block mb-1">Condición Poblacional</label>
+                    <select
+                      value={formBen.condicion_poblacional}
+                      onChange={(e) => setFormBen({ ...formBen, condicion_poblacional: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    >
+                      <option value="Víctima del conflicto armado">Víctima del conflicto armado</option>
+                      <option value="Migrante / Refugiada">Migrante / Refugiada</option>
+                      <option value="Comunidad de acogida">Comunidad de acogida</option>
+                      <option value="Desplazado interno">Desplazado interno</option>
+                    </select>
+                  </div>
+
+                  {/* NÚCLEO FAMILIAR */}
+                  <div className="pt-2 border-t space-y-2">
+                    <label className="font-bold block">Relacionar Familiar ({formBen.familiares.length})</label>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        placeholder="Nombre familiar"
+                        value={newFam.nombres}
+                        onChange={(e) => setNewFam({ ...newFam, nombres: e.target.value })}
+                        className="flex-1 p-2 border rounded-xl"
+                      />
+                      <select
+                        value={newFam.parentesco}
+                        onChange={(e) => setNewFam({ ...newFam, parentesco: e.target.value })}
+                        className="p-2 border rounded-xl"
+                      >
+                        <option value="Hijo/a">Hijo/a</option>
+                        <option value="Cónyuge">Cónyuge</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Padre">Padre</option>
+                      </select>
+                      <button
+                        type="button"
+                        onClick={handleAddFamiliarToForm}
+                        className="px-3 bg-slate-200 rounded-xl font-bold"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* HABEAS DATA */}
+                  <div className="pt-2 border-t">
+                    <label className="flex items-start gap-2 cursor-pointer bg-sky-50 p-2.5 rounded-xl">
+                      <input
+                        type="checkbox"
+                        required
+                        checked={formBen.autorizacion_datos}
+                        onChange={(e) => setFormBen({ ...formBen, autorizacion_datos: e.target.checked })}
+                        className="mt-1"
+                      />
+                      <span><strong>Autorización Habeas Data *:</strong> El beneficiario autoriza el uso de sus datos personales para la atención humanitaria del Proyecto URABÁ-PAÍS.</span>
+                    </label>
+                  </div>
+
+                  <div className="flex justify-end gap-2 pt-3 border-t">
+                    <button type="button" onClick={() => setShowRegisterModal(false)} className="px-4 py-2 border rounded-xl">Cancelar</button>
+                    <button type="submit" disabled={dupAlert && dupAlert.type === 'error'} className="px-4 py-2 bg-sky-600 text-white rounded-xl font-bold disabled:opacity-50">
+                      Guardar y Generar Código
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* MODAL VINCULACIÓN */}
+          {showVincModal && (
+            <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+              <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4">
+                <div className="flex justify-between items-center border-b pb-2">
+                  <h3 className="font-bold text-slate-800 text-sm">Vincular a Programa</h3>
+                  <button onClick={() => setShowVincModal(false)}>✕</button>
+                </div>
+                <form onSubmit={handleCreateVinculacion} className="space-y-3 text-xs">
+                  <div>
+                    <label className="font-semibold block mb-1">Beneficiario</label>
+                    <select
+                      value={formVinc.beneficiario_id}
+                      onChange={(e) => setFormVinc({ ...formVinc, beneficiario_id: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    >
+                      {db.beneficiarios.map(b => (
+                        <option key={b.id} value={b.id}>{b.codigo_interno} - {b.nombres} {b.apellidos}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-semibold block mb-1">Programa</label>
+                    <select
+                      value={formVinc.programa_id}
+                      onChange={(e) => setFormVinc({ ...formVinc, programa_id: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    >
+                      {db.programas.map(p => (
+                        <option key={p.id} value={p.id}>{p.nombre} ({p.organizacion_lider})</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-semibold block mb-1">Estado de Participación</label>
+                    <select
+                      value={formVinc.estado}
+                      onChange={(e) => setFormVinc({ ...formVinc, estado: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    >
+                      <option value="inscrito">Inscrito</option>
+                      <option value="en proceso">En Proceso</option>
+                      <option value="finalizado">Finalizado</option>
+                      <option value="retirado">Retirado</option>
+                    </select>
+                  </div>
+                  <div className="flex justify-end gap-2 pt-2 border-t">
+                    <button type="button" onClick={() => setShowVincModal(false)} className="px-3 py-1.5 border rounded-xl">Cancelar</button>
+                    <button type="submit" className="px-4 py-1.5 bg-blue-600 text-white rounded-xl font-bold">Vincular</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* MODAL REGISTRO ATENCIÓN */}
+          {showAtenModal && (
+            <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+              <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4">
+                <div className="flex justify-between items-center border-b pb-2">
+                  <h3 className="font-bold text-slate-800 text-sm">Registrar Atención o Ayuda</h3>
+                  <button onClick={() => setShowAtenModal(false)}>✕</button>
+                </div>
+                <form onSubmit={handleCreateAtencion} className="space-y-3 text-xs">
+                  <div>
+                    <label className="font-semibold block mb-1">Beneficiario</label>
+                    <select
+                      value={formAten.beneficiario_id}
+                      onChange={(e) => setFormAten({ ...formAten, beneficiario_id: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    >
+                      {db.beneficiarios.map(b => (
+                        <option key={b.id} value={b.id}>{b.codigo_interno} - {b.nombres} {b.apellidos}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-semibold block mb-1">Tipo de Ayuda Entregada</label>
+                    <input
+                      type="text"
+                      required
+                      value={formAten.tipo_atencion}
+                      onChange={(e) => setFormAten({ ...formAten, tipo_atencion: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-semibold block mb-1">Descripción Breve</label>
+                    <textarea
+                      required
+                      rows="2"
+                      value={formAten.descripcion}
+                      onChange={(e) => setFormAten({ ...formAten, descripcion: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    ></textarea>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="font-semibold block mb-1">Responsable</label>
+                      <input
+                        type="text"
+                        value={formAten.responsable}
+                        onChange={(e) => setFormAten({ ...formAten, responsable: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                      />
+                    </div>
+                    <div>
+                      <label className="font-semibold block mb-1">Entidad</label>
+                      <select
+                        value={formAten.entidad}
+                        onChange={(e) => setFormAten({ ...formAten, entidad: e.target.value })}
+                        className="w-full p-2 border rounded-xl"
+                      >
+                        <option value="COOPI">COOPI</option>
+                        <option value="HIAS">HIAS</option>
+                        <option value="FADV">FADV</option>
+                        <option value="HI">HI</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="flex justify-end gap-2 pt-2 border-t">
+                    <button type="button" onClick={() => setShowAtenModal(false)} className="px-3 py-1.5 border rounded-xl">Cancelar</button>
+                    <button type="submit" className="px-4 py-1.5 bg-emerald-600 text-white rounded-xl font-bold">Guardar Atención</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* MODAL REGISTRO SEGUIMIENTO */}
+          {showSegModal && (
+            <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+              <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4">
+                <div className="flex justify-between items-center border-b pb-2">
+                  <h3 className="font-bold text-slate-800 text-sm">Añadir Seguimiento (Avance & Tarea)</h3>
+                  <button onClick={() => setShowSegModal(false)}>✕</button>
+                </div>
+                <form onSubmit={handleCreateSeguimiento} className="space-y-3 text-xs">
+                  <div>
+                    <label className="font-semibold block mb-1">Beneficiario</label>
+                    <select
+                      value={formSeg.beneficiario_id}
+                      onChange={(e) => setFormSeg({ ...formSeg, beneficiario_id: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    >
+                      {db.beneficiarios.map(b => (
+                        <option key={b.id} value={b.id}>{b.codigo_interno} - {b.nombres} {b.apellidos}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-semibold block mb-1">Avance, Cambio o Novedad Observada</label>
+                    <textarea
+                      required
+                      rows="2"
+                      value={formSeg.avance_novedad}
+                      onChange={(e) => setFormSeg({ ...formSeg, avance_novedad: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    ></textarea>
+                  </div>
+                  <div>
+                    <label className="font-semibold block mb-1">Acción Pendiente (Compromiso)</label>
+                    <input
+                      type="text"
+                      required
+                      value={formSeg.accion_pendiente}
+                      onChange={(e) => setFormSeg({ ...formSeg, accion_pendiente: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                      placeholder="Ej: Cita de control o entrega de certificación"
+                    />
+                  </div>
+                  <div>
+                    <label className="font-semibold block mb-1">Fecha Próximo Contacto</label>
+                    <input
+                      type="date"
+                      value={formSeg.proximo_contacto}
+                      onChange={(e) => setFormSeg({ ...formSeg, proximo_contacto: e.target.value })}
+                      className="w-full p-2 border rounded-xl"
+                    />
+                  </div>
+                  <div className="flex justify-end gap-2 pt-2 border-t">
+                    <button type="button" onClick={() => setShowSegModal(false)} className="px-3 py-1.5 border rounded-xl">Cancelar</button>
+                    <button type="submit" className="px-4 py-1.5 bg-teal-600 text-white rounded-xl font-bold">Guardar Seguimiento</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* FOOTER */}
+          <footer className="bg-white border-t py-4 text-center text-xs text-slate-400 no-print">
+            Proyecto URABÁ-PAÍS · Prototipo Funcional de Gestión y Seguimiento de Beneficiarios (Hackathon 12 Horas)
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

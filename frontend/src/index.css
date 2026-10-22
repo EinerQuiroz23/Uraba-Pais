@@ -1,0 +1,243 @@
+/* ── Google Font import ───────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Variables de paleta — AZUL HUMANITARIO UNIFICADO ─────────────── */
+:root {
+  --clr-bg: #f0f6ff;
+  /* fondo global — azul cielo muy suave    */
+  --clr-surface: #ffffff;
+  /* tarjetas y paneles blancos             */
+  --clr-border: #dbeafe;
+  /* bordes azulados sutiles                */
+
+  --clr-primary: #1d4ed8;
+  /* azul real vibrante (blue-700)          */
+  --clr-primary-light: #eff6ff;
+  /* fondo azul muy claro (blue-50)         */
+  --clr-primary-dark: #1e40af;
+  /* azul profundo hover (blue-800)         */
+
+  --clr-accent: #0284c7;
+  /* azul zafiro / sky-600 humanitario      */
+  --clr-accent-light: #f0f9ff;
+  /* fondo suave del acento (sky-50)        */
+
+  --clr-sidebar-bg: #0c2340;
+  /* azul marino institucional profundo     */
+  --clr-sidebar-hover: #16365c;
+  /* hover sobre ítem del sidebar           */
+  --clr-sidebar-active: #1d4ed8;
+  /* ítem activo en azul primario           */
+
+  --clr-text: #0f172a;
+  /* texto principal gris-azulado oscuro    */
+  --clr-text-muted: #475569;
+  /* texto secundario                       */
+
+  --clr-warning: #b45309;
+  /* ámbar — alertas puntuales              */
+  --clr-danger: #dc2626;
+  /* rojo — solo errores críticos           */
+  --clr-success: #0284c7;
+  /* azul acento para confirmaciones        */
+}
+
+@layer base {
+  body {
+    margin: 0;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: var(--clr-text);
+    background-color: var(--clr-bg);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Selección de texto — azul suave */
+  ::selection {
+    background-color: #bfdbfe;
+    /* blue-200 */
+    color: #1e3a8a;
+    /* blue-900 */
+  }
+}
+
+/* ── Scrollbars — sutiles y refinados en tonos de azul ─────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 9999px;
+}
+
+/* blue-300 */
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* blue-500 */
+
+/* ── Card hover — eleva suavemente con sombra azulada elegante ─── */
+.card-hover-effect {
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px -6px rgba(29, 78, 216, 0.12),
+    0 4px 8px -4px rgba(15, 23, 42, 0.04);
+}
+
+/* ── Focus ring global — azul real ──────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  /* blue-500 */
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+.tema-oscuro .bg-white {
+  background-color: #121a2b;
+}
+
+.tema-oscuro .text-slate-900,
+.tema-oscuro .text-slate-800 {
+  color: #f1f5f9;
+}
+
+.tema-oscuro .text-slate-600,
+.tema-oscuro .text-slate-500,
+.tema-oscuro .text-slate-400 {
+  color: #94a3b8;
+}
+
+.tema-oscuro .border-blue-100,
+.tema-oscuro .border-blue-200,
+.tema-oscuro .border-slate-200 {
+  border-color: #1e293b;
+}
+
+.tema-oscuro .bg-blue-50,
+.tema-oscuro .bg-blue-50\/50,
+.tema-oscuro .bg-blue-50\/70,
+.tema-oscuro .bg-slate-50 {
+  background-color: #172033;
+}
+
+.tema-oscuro .bg-slate-50\/60,
+.tema-oscuro .bg-slate-50\/50,
+.tema-oscuro .bg-slate-50\/80 {
+  background-color: #1a2436;
+}
+
+.tema-oscuro .border-slate-100,
+.tema-oscuro .border-slate-200\/80,
+.tema-oscuro .border-slate-200\/50 {
+  border-color: #243044;
+}
+
+.tema-oscuro .text-slate-700 {
+  color: #cbd5e1;
+}
+
+.tema-oscuro .text-emerald-900,
+.tema-oscuro .text-emerald-800,
+.tema-oscuro .text-emerald-700,
+.tema-oscuro .text-indigo-700,
+.tema-oscuro .text-sky-800 {
+  color: #86efac;
+}
+
+.tema-oscuro .bg-sky-100 {
+  background-color: #16324a;
+}
+
+.tema-oscuro .bg-slate-100 {
+  background-color: #243044;
+  color: #e2e8f0;
+}
+
+.tema-oscuro .from-blue-50 {
+  --tw-gradient-from: #172033;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.tema-oscuro .to-sky-50 {
+  --tw-gradient-to: #1a3048;
+}
+
+.tema-oscuro .from-sky-50 {
+  --tw-gradient-from: #172033;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.tema-oscuro .to-indigo-50 {
+  --tw-gradient-to: #1a3048;
+}
+
+.tema-oscuro .bg-white\/80 {
+  background-color: #1a2436;
+}
+
+.tema-oscuro .bg-sky-50 {
+  background-color: #16324a;
+}
+
+.tema-oscuro select,
+.tema-oscuro option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.tema-oscuro input,
+.tema-oscuro input[type="date"] {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.tema-oscuro input::placeholder {
+  color: #64748b;
+}
+
+.tema-oscuro .hover\:bg-slate-50:hover,
+.tema-oscuro .hover\:bg-slate-100:hover {
+  background-color: #1e293b;
+}
+
+.tema-oscuro textarea {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.tema-oscuro textarea::placeholder {
+  color: #64748b;
+}
