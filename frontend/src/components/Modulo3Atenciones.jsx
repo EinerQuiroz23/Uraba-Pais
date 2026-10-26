@@ -8,7 +8,7 @@ import {
   Check,
   X,
 } from "lucide-react";
-import Paginador from "./paginador";
+import Paginador from "./Paginador";
 import { api } from "../services/api";
 
 const POR_PAGINA = 10;
