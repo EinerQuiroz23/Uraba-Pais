@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link2, CheckCircle2, Building2, UserCheck, X } from "lucide-react";
-import Paginador from "./paginador";
+import Paginador from "./Paginador";
 import { api } from "../services/api";
 
 const POR_PAGINA = 10;
